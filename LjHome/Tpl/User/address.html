@@ -1,0 +1,64 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	  $("#searchuser").click(function(){ 
+		  $("#searchuserform").submit();
+	  });
+});
+</script>
+
+<div class="content" style="margin-top: 10px;height: 750px;">
+	<div class="classifynavigation">
+		<include file="./user_classifynavigation" />
+	</div>
+	<div class="classifycontent">
+	<form id="searchuserform" action="__URL__/search" method="get">
+		<table width="100%" height="26" border="0" cellpadding="0" cellspacing="0" background="__PUBLIC__/Images/tbg.jpg" class="table">
+			<tbody> 
+				<tr>
+					<td width="35" align="center"><img
+						src="__PUBLIC__/Images/sp.gif"
+						width="5" height="12"></td>
+					<td class="fontg" style="margin-top: 2px"><p>通信录</p></td>
+					<td align="right" style="width: 550px;  margin-top: 2px">
+					<input type="text" name="key" placeholder="学号或姓名"/>
+					</td>
+					<td><img id="searchuser" src="__BUTTON__/searchbtn.png" class="btn" /></td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</form>
+		<table class="address_list">
+			<thead>
+				<tr>
+					<th>学号</th>
+					<th>姓名</th>
+					<th>入学年份</th>
+					<th>专业</th>
+					<th>宿舍</th>
+					<th>手机</th>
+					<th>短号</th>
+					<th>家庭住址</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="sep_row"></tr> 
+			<volist name="user" id="user">
+				<tr class="content_row">
+					<td height="50"><{$user.userid}></td>
+					<td><a href="__URL__/getUser/userid/<{$user.userid}>" target="_blank"><{$user.username}></a></td>
+					<td><{$user.entryyear}></td>
+					<td><{$user.specialty}></td>
+					<td><{$user.schooladdress}></td>
+					<td><{$user.phone}></td>
+					<td><{$user.shortphone}></td>
+					<td><{$user.homeaddress}></td>
+				</tr>
+			</volist>
+			<tr>
+			<td colspan="8"><br/><{$show}></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

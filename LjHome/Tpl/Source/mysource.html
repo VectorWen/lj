@@ -1,0 +1,56 @@
+<div class="content" style="height:500px">
+<div class="classifynavigation">
+		<include file="./source_classifynavigation" />
+	</div>
+	<div class="classifycontent">
+	<table width="100%" height="30" border="0" cellpadding="0"
+			cellspacing="0" background="__PUBLIC__/Images/tbg.jpg"
+			class="table">
+			<tbody>
+				<tr>
+					<td width="35" align="center"><img
+						src="__PUBLIC__/Images/sp.gif"
+						width="5" height="12"></td>
+					<td class="fontg" style="margin-top: 2px"><p>资源共享&gt;&gt;我的资源</p></td>
+				</tr>
+			</tbody>
+		</table>
+	<div  id="download_list"  align="center">
+			<volist id="source" name="source">
+				<div style="height:10px"></div>
+		  		  <table width="80%"  border="0" cellpadding="0" cellspacing="0" id="source">
+		  		  		<tr>
+		  		  			<td id="sourcename" width="85%" align="center" style="font-size: 18px;color:#107cc5"><b><{$source.showname}></b></td>
+		  		  			<td rowspan="2" align="center">
+		  		  			<a href="__URL__/download/sourceid/<{$source.sourceid}>"><img class="btn" title="下载" src="__BUTTON__/downloadpbtn.png" width="30" height="30"></a>
+		  		  			</td>
+		  		  			<td rowspan="2" align="center">
+		  		  			<a href="__URL__/delSource/sourceid/<{$source.sourceid}>"><img class="btn" title="删除" src="__BUTTON__/delpbtn.png" width="30" height="30"></a>
+		  		  			</td>
+		  		  			</tr>
+		  		  			<tr>
+		  		  			<td>
+								<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td width="21%"><span><b>&nbsp;大小：</b>
+											<if condition="($source.size egt 1048576)"> <{$source['size']/1048576|round= 2}>MB 
+											<elseif condition="($source.size egt 1024)"/> <{$source['size']/1024|round= 2}>KB 
+											<else /><{$source.size}>B
+											</if> 
+											</span></td>
+											<td width="25%"><b>共享人：</b><{$source.username}></td>
+											<td width="22%"><b>下载次数：</b><{$source.downloadcount}></td>
+											<td width="33%"><b>共享日期：</b><{$source.addtime|date='Y-m-d',###}></td>
+										</tr>
+										</table>
+							</td>
+		  		  			</tr>
+		  		  			
+		  		  </table>
+		  	</volist>
+		  	<{$show}>
+		</div>	
+		
+	  </div>
+
+	</div>

@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" rev="stylesheet" href="__CSS__/admin_style.css" type="text/css" media="all"/>
+<script language="javascript" type="text/javascript" src="__JS__/jQuery.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+window.onload=function(){
+	if(<{$user[0].sex}>==0){
+		document.getElementsByName('sex')[0].checked='checked';
+	}else{
+		document.getElementsByName('sex')[1].checked='checked';
+	}
+}
+
+$(document).ready(function(){
+	  $("#modify").click(function(){
+		  $("input#userinfo").attr("readOnly",false);
+		  
+		  $("#btn1").hide()
+		  $("#btn2").show()
+	  });
+	  
+	  $("#save").click(function(){
+		  $("#saveform").attr("action","__URL__/saveUser/");
+		  $("#saveform").submit();
+	  });
+	  
+	  $("#resetpassword").click(function(){
+		 var a = confirm("你确定要重置该用户的密码为默认密码：wyulj123？");
+			if(a){
+			  $("#saveform").attr("action","__URL__/resetPassword/");
+			  $("#saveform").submit();
+			}
+	  });
+	});
+</script>
+<style type="text/css">
+#userinfo{
+	border-left:0px;
+	border-top:0px;
+	border-right:0px;
+	border-bottom:1px;
+}
+</style>
+</head>
+
+<body class="ContentBody">
+  <form id="saveform"  method="post" >
+<div class="MainDiv">
+<table width="99%" border="0" cellpadding="0" cellspacing="0" class="CContent">
+  <tr>
+      <th class="tablestyle_title" >用户详细</th>
+  </tr>
+  <tr>
+    <td class="CPanel" align="center">
+		<table border="0" cellpadding="0" cellspacing="0" style="width:90%">
+			<TR>
+				<TD width="100%" >
+					<fieldset style="height:100%;float-left:auto;float-right:auto;">
+						<legend>用户信息</legend>
+					  <table border="0" cellpadding="2" cellspacing="1" style="width:100%">  
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+						    </td>
+						    <td align="left"> 
+						    <label><{$user[0].userid}></label>
+						    <input id="userinfo" name="userid" type="hidden" value="<{$user[0].userid}>" />
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+						    </td>
+						    <td align="left"> 
+						    <input id="userinfo" name="username" type="text" readonly="readonly" class="text"  value="<{$user[0].username}>" />
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+						    </td>
+						    <td align="left"> 
+						   	<input type="radio" name="sex" value="0" />男<input type="radio" name="sex" value="1"/>女
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</label>
+						    </td>
+						    <td align="left"> 
+						    <input id="userinfo" name="specialty" type="text" readonly="readonly" class="text"  value="<{$user[0].specialty}>" />
+						    </td>
+						  </tr>
+					  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</label>
+						    </td>
+						    <td align="left"> 
+						    <input id="userinfo" name="phone" type="text" readonly="readonly" class="text"  value="<{$user[0].phone}>" />
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>短&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+						    </td>
+						    <td align="left"> 
+						    	<input id="userinfo" name="shortphone" type="text" readonly="readonly" class="text"  value="<{$user[0].shortphone}>" />
+						    </td>
+						  </tr>
+						  
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>入学年份：</label>
+						    </td>
+						    <td align="left"> 
+						    	<input id="userinfo" name="entryyear" type="text" readonly="readonly" class="text"  value="<{$user[0].entryyear}>" />
+						    </td>
+						  </tr>
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>学校地址：</label>
+						    </td>
+						    <td align="left"> 
+						    <input id="userinfo" name="schooladdress" type="text" readonly="readonly" class="text"  value="<{$user[0].schooladdress}>" />
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>家乡地址：</label>
+						    </td>
+						    <td align="left"> 
+						    <input id="userinfo" name="homeaddress" type="text" readonly="readonly" class="text"  value="<{$user[0].homeaddress}>" />
+						    </td>
+						  </tr>
+					
+					 	<tr>
+					 	<td>&nbsp;</td>
+					 		<td colspan="2">
+					 			<br/>
+					 		   <span id="btn1">
+						 			<input type="button" id="modify" value="修改"/>　
+						 			<input type="button" id="resetpassword" value="重置密码" />
+					 		   </span>
+					 		   <span id="btn2" style="display:none">
+						 			<input type="button" id="save" value="保存"/>　
+					 		   </span>
+					 		</td>
+					 		
+					 	</tr>
+					  </table>
+					 
+			  <br />
+				</fieldset>			
+				</TD> 
+		</TR>
+		</TABLE> 
+	 </td>
+  </tr> 
+		<TR>
+			<TD colspan="2" align="center" height="50px">
+			&nbsp;
+			</TD>
+		</TR>
+		</TABLE>
+	
+	
+	 </td>
+  </tr>
+  
+  
+  
+  </table>
+
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+ createBarItemAndAdd2Owner(subItemWeakCvr, "小区(按采样点信号强度)", null, new ZTCellWeakCoverScanGsmByRegion(model));
+ createBarItemAndAdd2Owner(subItemWeakCvr, "小区(按覆盖范围内栅格)", null, ZTDIYCellWeakCoverByCellDir_GScan.GetInstance());
+一、后面两种功能类的区别，这个功能类主要用来做什么的？
+
+
+
+  protected override MasterCom.RAMS.UserMng.LogInfoItem getRecLogItem()
+        {
+            return new MasterCom.RAMS.UserMng.LogInfoItem(2, 11000, 11019, "查询");
+        }
+ public LogInfoItem(int type,int func,int subfuncId,String desc)
+
+二、讲一下按钮绑定的功能类，大概需要完成什么样的功能？
+
+
+return new MasterCom.RAMS.UserMng.LogInfoItem(2, 16000, 16011, "查询");
+Dictionary<string, object> param = new Dictionary<string, object>();
+            param["param_name"] = "GSCAN_RxLev";
+            param["param_arg"] = 0;
+            columnsDef.Add((object)param);
+这些数值从哪里获得？
+cell是表示什么对象
+
+ int? earfcn = (int?)this["LTESCAN_TopN_EARFCN", index];
+            int? pci = (int?)(short?)this["LTESCAN_TopN_PCI", index];
+
+TDCell WCell curCell是什么意思？
+cur这个前缀代表什么意思？
+getCurSelDIYSampleGroupPrepare
+
+svn更新个代码要手动加入vs？
+为何lte的异常点没有那个小区点？

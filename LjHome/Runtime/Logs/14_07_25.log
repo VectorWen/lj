@@ -1,0 +1,620 @@
+[ 2014-07-25T16:37:47+08:00 ] 127.0.0.1 /lj/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.027625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.068380s ]
+SQL: SHOW COLUMNS FROM `lj_source` [ RunTime:0.179140s ]
+SQL: SELECT `sourceid`,`showname` FROM `lj_source` WHERE ( `status` = 0 ) ORDER BY downloadcount desc LIMIT 5   [ RunTime:0.053253s ]
+SQL: SHOW COLUMNS FROM `lj_showpicture` [ RunTime:0.053070s ]
+SQL: SELECT * FROM `lj_showpicture` WHERE ( status=1 ) ORDER BY showpictureid desc LIMIT 10   [ RunTime:0.001130s ]
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.046885s ]
+SQL: SELECT `articleid`,`title`,`slidepicture` FROM `lj_article` WHERE ( slidestatus=1 ) ORDER BY addtime desc LIMIT 5   [ RunTime:0.002608s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=0 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.047527s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.046070s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.011105s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'contact' )  [ RunTime:0.003724s ]
+SQL: SHOW COLUMNS FROM `lj_link` [ RunTime:0.036931s ]
+SQL: SELECT * FROM `lj_link` WHERE ( linkstatus=0 ) ORDER BY linkid LIMIT 5   [ RunTime:0.003251s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=1 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.001206s ]
+SQL: SHOW COLUMNS FROM `lj_activity` [ RunTime:0.049045s ]
+SQL: SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4   [ RunTime:0.004058s ]
+ERR: Unknown column 'status' in 'where clause'
+ [ SQL语句 ] : SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4  
+SQL: SHOW COLUMNS FROM `lj_borrow` [ RunTime:0.038357s ]
+SQL: SELECT * FROM `lj_borrow` ORDER BY borrowid desc LIMIT 4   [ RunTime:0.002647s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.026988s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.001857s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000815s ]
+SQL: SHOW COLUMNS FROM `lj_book` [ RunTime:0.047472s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787111330233' ) LIMIT 1   [ RunTime:0.022264s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000745s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000560s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787040119443' ) LIMIT 1   [ RunTime:0.001278s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000866s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000873s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='sdsd' ) LIMIT 1   [ RunTime:0.000612s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000577s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000503s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='dvsdf' ) LIMIT 1   [ RunTime:0.000529s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003115s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003268s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  userid F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 250 行.
+NOTIC: [8] Undefined index:  contacttitle F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 320 行.
+NOTIC: [8] Undefined index:  contactaddress F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 330 行.
+NOTIC: [8] Undefined index:  contactphone F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 339 行.
+NOTIC: [8] Undefined index:  contactpostcode F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 348 行.
+NOTIC: [8] Undefined index:  contactemail F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 357 行.
+NOTIC: [8] Undefined index:  contactwebsite F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 366 行.
+INFO: Run ParseTemplate Behavior [ RunTime:1.603052s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.605159s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.004417s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.002834s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001808s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.003104s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.012792s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.005411s ]
+INFO: [ view_end ] --END-- [ RunTime:0.005594s ]
+
+[ 2014-07-25T16:37:54+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2014-07-25T16:38:07+08:00 ] 127.0.0.1 /lj/index.php/Website/about
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.017559s ]
+INFO: [ route_check ] --END-- [ RunTime:0.017779s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.003355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003678s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.011389s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.006991s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'about' )  [ RunTime:0.001391s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003680s ]
+INFO: [ view_template ] --END-- [ RunTime:0.004338s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.057463s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057633s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.002181s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.002516s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.002474s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.002796s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010443s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.003574s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003731s ]
+
+[ 2014-07-25T16:38:11+08:00 ] 127.0.0.1 /lj/index.php/Article/newslist
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.003996s ]
+INFO: [ route_check ] --END-- [ RunTime:0.004239s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001870s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002016s ]
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.006005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lj_article` WHERE ( `classid` = 1 ) LIMIT 1   [ RunTime:0.000441s ]
+SQL: SELECT * FROM `lj_article` WHERE ( `classid` = 1 ) ORDER BY priority,addtime desc LIMIT 0,10   [ RunTime:0.001268s ]
+SQL: SHOW COLUMNS FROM `lj_admin` [ RunTime:0.139951s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.003177s ]
+SQL: SHOW COLUMNS FROM `lj_class` [ RunTime:0.030815s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.002053s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000510s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000530s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000553s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000537s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000482s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000875s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000590s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000704s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000435s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000476s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000767s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000748s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000586s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000521s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000569s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000547s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000415s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000566s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003891s ]
+INFO: [ view_template ] --END-- [ RunTime:0.004077s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.064331s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064510s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.002449s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001918s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001902s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.002083s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008830s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.003523s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003727s ]
+
+[ 2014-07-25T16:38:15+08:00 ] 127.0.0.1 /lj/index.php/Login/login
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.006014s ]
+INFO: [ route_check ] --END-- [ RunTime:0.006398s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001527s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.006425s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lj_user` WHERE ( `userid` = '11070512' ) AND ( `password` = 'e10adc3949ba59abbe56e057f20f883e' ) LIMIT 1   [ RunTime:0.000694s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002745s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003017s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.019916s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020118s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000860s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000728s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000578s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001005s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003629s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.003915s ]
+INFO: [ view_end ] --END-- [ RunTime:0.004114s ]
+
+[ 2014-07-25T16:38:17+08:00 ] 127.0.0.1 /lj/index.php/Source/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001770s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001937s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001386s ]
+SQL: SHOW COLUMNS FROM `lj_source` [ RunTime:0.004574s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lj_source` WHERE ( `status` = 0 ) LIMIT 1   [ RunTime:0.002008s ]
+SQL: SELECT * FROM `lj_source` WHERE ( `status` = 0 ) ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.004741s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006429' ) LIMIT 1   [ RunTime:0.002009s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006429' ) LIMIT 1   [ RunTime:0.000438s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006429' ) LIMIT 1   [ RunTime:0.000238s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006429' ) LIMIT 1   [ RunTime:0.000185s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006429' ) LIMIT 1   [ RunTime:0.000439s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000437s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000376s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000368s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000499s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000547s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002492s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002667s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.033804s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033990s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001285s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001660s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000941s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000976s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005359s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001184s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001297s ]
+
+[ 2014-07-25T16:38:17+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2014-07-25T16:38:19+08:00 ] 127.0.0.1 /lj/index.php/Discuss/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.004743s ]
+INFO: [ route_check ] --END-- [ RunTime:0.004995s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001647s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.006969s ]
+INFO: [ view_template ] --END-- [ RunTime:0.007242s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.062338s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062641s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.003840s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.005282s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.002812s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.003459s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015946s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.002456s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002670s ]
+
+[ 2014-07-25T16:38:20+08:00 ] 127.0.0.1 /lj/index.php/User/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.003204s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003496s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002783s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.011720s ]
+SQL: SELECT * FROM `lj_user` WHERE ( `userid` = '11070512' )  [ RunTime:0.001468s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003694s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003891s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  userid == $user[0] F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 183 行.
+NOTIC: [8] Undefined index:  sex F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 192 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 436 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 454 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.039856s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039994s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000927s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000807s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000944s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001552s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004623s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001631s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001772s ]
+
+[ 2014-07-25T16:38:21+08:00 ] 127.0.0.1 /lj/index.php/Website/contact/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.003164s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003372s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002656s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.006910s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.006627s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'contact' )  [ RunTime:0.001818s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003857s ]
+INFO: [ view_template ] --END-- [ RunTime:0.004147s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  contacttitle F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 271 行.
+NOTIC: [8] Undefined index:  contactaddress F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 277 行.
+NOTIC: [8] Undefined index:  contactphone F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 282 行.
+NOTIC: [8] Undefined index:  contactpostcode F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 286 行.
+NOTIC: [8] Undefined index:  contactemail F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 290 行.
+NOTIC: [8] Undefined index:  contactwebsite F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 294 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.056037s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056199s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.002672s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.002705s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001999s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.002425s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010279s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.004928s ]
+INFO: [ view_end ] --END-- [ RunTime:0.005102s ]
+
+[ 2014-07-25T16:38:23+08:00 ] 127.0.0.1 /lj/index.php/User/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001319s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001441s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001096s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001280s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.007980s ]
+SQL: SELECT * FROM `lj_user` WHERE ( `userid` = '11070512' )  [ RunTime:0.002867s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002668s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002831s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  userid == $user[0] F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 183 行.
+NOTIC: [8] Undefined index:  sex F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 192 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 436 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 454 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.051496s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051686s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001453s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001119s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000706s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001592s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005411s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001658s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001800s ]
+
+[ 2014-07-25T16:38:32+08:00 ] 127.0.0.1 /lj/index.php/Website/contact/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.003364s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003713s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.003739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004060s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.008206s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.006730s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'contact' )  [ RunTime:0.003932s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000907s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001057s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  contacttitle F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 271 行.
+NOTIC: [8] Undefined index:  contactaddress F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 277 行.
+NOTIC: [8] Undefined index:  contactphone F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 282 行.
+NOTIC: [8] Undefined index:  contactpostcode F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 286 行.
+NOTIC: [8] Undefined index:  contactemail F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 290 行.
+NOTIC: [8] Undefined index:  contactwebsite F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\520cd06d05c0f4b4cebe6c200cd7be92.php 第 294 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.033971s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034145s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001694s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000984s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001705s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001319s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006261s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001661s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001829s ]
+
+[ 2014-07-25T16:38:34+08:00 ] 127.0.0.1 /lj/index.php/User/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002333s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002563s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.003077s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003342s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.005032s ]
+SQL: SELECT * FROM `lj_user` WHERE ( `userid` = '11070512' )  [ RunTime:0.002274s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.001580s ]
+INFO: [ view_template ] --END-- [ RunTime:0.001794s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  userid == $user[0] F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 183 行.
+NOTIC: [8] Undefined index:  sex F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 192 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 436 行.
+NOTIC: [8] Use of undefined constant userid - assumed 'userid' F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\30c1118cbccce52e0eea5da18b1e0da9.php 第 454 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.032430s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032586s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001141s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001041s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000675s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004399s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001858s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002007s ]
+
+[ 2014-07-25T16:38:35+08:00 ] 127.0.0.1 /lj/index.php/Discuss/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002175s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002353s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001749s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002506s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002733s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.040568s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040841s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001193s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001107s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000598s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001332s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004699s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.002110s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002297s ]
+
+[ 2014-07-25T16:38:36+08:00 ] 127.0.0.1 /lj/index.php/Source/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001835s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001998s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001397s ]
+SQL: SHOW COLUMNS FROM `lj_source` [ RunTime:0.009510s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lj_source` WHERE ( `status` = 0 ) LIMIT 1   [ RunTime:0.000635s ]
+SQL: SELECT * FROM `lj_source` WHERE ( `status` = 0 ) ORDER BY addtime desc LIMIT 0,10   [ RunTime:0.000735s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.006464s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006429' ) LIMIT 1   [ RunTime:0.002436s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006429' ) LIMIT 1   [ RunTime:0.000604s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006429' ) LIMIT 1   [ RunTime:0.000814s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006429' ) LIMIT 1   [ RunTime:0.000573s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006429' ) LIMIT 1   [ RunTime:0.000450s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.001414s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000649s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000404s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000388s ]
+SQL: SELECT `username` FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000630s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003001s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003229s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.042620s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042775s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001725s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000737s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000390s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000810s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003959s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001148s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001446s ]
+
+[ 2014-07-25T16:38:37+08:00 ] 127.0.0.1 /lj/index.php/Activity/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.003954s ]
+INFO: [ route_check ] --END-- [ RunTime:0.004276s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001957s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002290s ]
+SQL: SHOW COLUMNS FROM `lj_activity` [ RunTime:0.007062s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lj_activity` LIMIT 1   [ RunTime:0.000848s ]
+SQL: SELECT * FROM `lj_activity` ORDER BY priority,begintime desc LIMIT 0,15   [ RunTime:0.000356s ]
+ERR: Unknown column 'priority' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `lj_activity` ORDER BY priority,begintime desc LIMIT 0,15  
+NOTIC: [8] Use of undefined constant activitylist - assumed 'activitylist' F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Lib\Action\ActivityAction.class.php 第 21 行.
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003400s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003633s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.043987s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044175s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001342s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001245s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000789s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001787s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008391s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.002433s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002666s ]
+
+[ 2014-07-25T16:38:38+08:00 ] 127.0.0.1 /lj/index.php/Book/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002900s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003122s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001188s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001323s ]
+SQL: SHOW COLUMNS FROM `lj_borrow` [ RunTime:0.006987s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lj_borrow` WHERE ( `offerid` <> '11070512' ) AND ( `status` = 0 ) LIMIT 1   [ RunTime:0.004652s ]
+SQL: SELECT * FROM `lj_borrow` WHERE ( `offerid` <> '11070512' ) AND ( `status` = 0 ) LIMIT 0,10   [ RunTime:0.001187s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003268s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003439s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.042051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042629s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001133s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000916s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000682s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001373s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004764s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001751s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001910s ]
+
+[ 2014-07-25T16:38:39+08:00 ] 127.0.0.1 /lj/index.php/Article/newslist
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.002637s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002869s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001838s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002022s ]
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.003966s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lj_article` WHERE ( `classid` = 1 ) LIMIT 1   [ RunTime:0.000394s ]
+SQL: SELECT * FROM `lj_article` WHERE ( `classid` = 1 ) ORDER BY priority,addtime desc LIMIT 0,10   [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `lj_admin` [ RunTime:0.004884s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.002217s ]
+SQL: SHOW COLUMNS FROM `lj_class` [ RunTime:0.005677s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.001976s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000448s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000329s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000319s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000339s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000989s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000774s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000614s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.003296s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000403s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000690s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000755s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000395s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000359s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000312s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='1' ) LIMIT 1   [ RunTime:0.000318s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002702s ]
+INFO: [ view_template ] --END-- [ RunTime:0.002918s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.033500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033666s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001819s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000857s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000528s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000994s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004623s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001323s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001466s ]
+
+[ 2014-07-25T16:38:40+08:00 ] 127.0.0.1 /lj/index.php/Website/about
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.005255s ]
+INFO: [ route_check ] --END-- [ RunTime:0.005481s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002085s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.006384s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.007150s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'about' )  [ RunTime:0.003116s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003915s ]
+INFO: [ view_template ] --END-- [ RunTime:0.004154s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.035071s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035299s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001404s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001242s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000788s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005114s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001376s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001581s ]
+
+[ 2014-07-25T16:38:41+08:00 ] 127.0.0.1 /lj/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003203s ]
+SQL: SHOW COLUMNS FROM `lj_source` [ RunTime:0.006677s ]
+SQL: SELECT `sourceid`,`showname` FROM `lj_source` WHERE ( `status` = 0 ) ORDER BY downloadcount desc LIMIT 5   [ RunTime:0.003042s ]
+SQL: SHOW COLUMNS FROM `lj_showpicture` [ RunTime:0.006509s ]
+SQL: SELECT * FROM `lj_showpicture` WHERE ( status=1 ) ORDER BY showpictureid desc LIMIT 10   [ RunTime:0.003144s ]
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.007395s ]
+SQL: SELECT `articleid`,`title`,`slidepicture` FROM `lj_article` WHERE ( slidestatus=1 ) ORDER BY addtime desc LIMIT 5   [ RunTime:0.006132s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=0 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.000744s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.006292s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.007957s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'contact' )  [ RunTime:0.002349s ]
+SQL: SHOW COLUMNS FROM `lj_link` [ RunTime:0.006764s ]
+SQL: SELECT * FROM `lj_link` WHERE ( linkstatus=0 ) ORDER BY linkid LIMIT 5   [ RunTime:0.002631s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=1 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.000685s ]
+SQL: SHOW COLUMNS FROM `lj_activity` [ RunTime:0.006349s ]
+SQL: SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4   [ RunTime:0.002505s ]
+ERR: Unknown column 'status' in 'where clause'
+ [ SQL语句 ] : SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4  
+SQL: SHOW COLUMNS FROM `lj_borrow` [ RunTime:0.004838s ]
+SQL: SELECT * FROM `lj_borrow` ORDER BY borrowid desc LIMIT 4   [ RunTime:0.002537s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.005123s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.004616s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000854s ]
+SQL: SHOW COLUMNS FROM `lj_book` [ RunTime:0.007167s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787111330233' ) LIMIT 1   [ RunTime:0.002792s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000492s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000450s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787040119443' ) LIMIT 1   [ RunTime:0.000629s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000581s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000518s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='sdsd' ) LIMIT 1   [ RunTime:0.001298s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000671s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.001116s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='dvsdf' ) LIMIT 1   [ RunTime:0.000796s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003004s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003299s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  contacttitle F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 320 行.
+NOTIC: [8] Undefined index:  contactaddress F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 330 行.
+NOTIC: [8] Undefined index:  contactphone F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 339 行.
+NOTIC: [8] Undefined index:  contactpostcode F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 348 行.
+NOTIC: [8] Undefined index:  contactemail F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 357 行.
+NOTIC: [8] Undefined index:  contactwebsite F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 366 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.081141s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.081281s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001781s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001260s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000823s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005833s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.001528s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001779s ]
+

@@ -1,0 +1,92 @@
+[ 2014-06-05T19:17:43+08:00 ] 127.0.0.1 /wyulianjiang/index.php
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001161s ]
+SQL: SHOW COLUMNS FROM `lj_source` [ RunTime:0.004600s ]
+SQL: SELECT `sourceid`,`showname` FROM `lj_source` WHERE ( `status` = 0 ) ORDER BY downloadcount desc LIMIT 5   [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `lj_showpicture` [ RunTime:0.003910s ]
+SQL: SELECT * FROM `lj_showpicture` WHERE ( status=1 ) ORDER BY showpictureid desc LIMIT 10   [ RunTime:0.000343s ]
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.004310s ]
+SQL: SELECT `articleid`,`title`,`slidepicture` FROM `lj_article` WHERE ( slidestatus=1 ) ORDER BY addtime desc LIMIT 5   [ RunTime:0.000451s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=0 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.000339s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.003539s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.003051s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'contact' )  [ RunTime:0.000372s ]
+SQL: SHOW COLUMNS FROM `lj_link` [ RunTime:0.003321s ]
+SQL: SELECT * FROM `lj_link` WHERE ( linkstatus=0 ) ORDER BY linkid LIMIT 5   [ RunTime:0.000239s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=1 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.000256s ]
+SQL: SHOW COLUMNS FROM `lj_activity` [ RunTime:0.003535s ]
+SQL: SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4   [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `lj_borrow` [ RunTime:0.004155s ]
+SQL: SELECT * FROM `lj_borrow` ORDER BY borrowid desc LIMIT 4   [ RunTime:0.000264s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.003142s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='ap1006454' ) LIMIT 1   [ RunTime:0.000324s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000191s ]
+SQL: SHOW COLUMNS FROM `lj_book` [ RunTime:0.003332s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9781840785371' ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000198s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000164s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787040195835' ) LIMIT 1   [ RunTime:0.000171s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='AP1006453' ) LIMIT 1   [ RunTime:0.000252s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000158s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787550228559' ) LIMIT 1   [ RunTime:0.000206s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='AP1006453' ) LIMIT 1   [ RunTime:0.000175s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000150s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787807590231' ) LIMIT 1   [ RunTime:0.000164s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000823s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000878s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: userid F:\server\workspace\wyulianjiang\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 249 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.026311s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026370s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001289s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000602s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000394s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000560s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003028s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000569s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000614s ]
+
+[ 2014-06-05T19:17:55+08:00 ] 127.0.0.1 /wyulianjiang/index.php/Article/detail/articleid/27
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.001262s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001387s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000696s ]
+NOTIC: [8] Undefined index: userid F:\server\workspace\wyulianjiang\LjHome\Lib\Action\ArticleAction.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.002762s ]
+SQL: SELECT * FROM `lj_article` WHERE ( `articleid` = 27 )  [ RunTime:0.000290s ]
+SQL: SHOW COLUMNS FROM `lj_admin` [ RunTime:0.003224s ]
+SQL: SELECT `adminname` FROM `lj_admin` WHERE ( 1=1 AND adminid='admin' ) LIMIT 1   [ RunTime:0.000241s ]
+SQL: SHOW COLUMNS FROM `lj_class` [ RunTime:0.002492s ]
+SQL: SELECT `name` FROM `lj_class` WHERE ( 1=1 AND classid='0' ) LIMIT 1   [ RunTime:0.000216s ]
+SQL: UPDATE `lj_article` SET `viewcount`=325 WHERE ( `articleid` = 27 ) [ RunTime:0.259894s ]
+SQL: SHOW COLUMNS FROM `lj_articlereview` [ RunTime:0.003116s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lj_articlereview` WHERE ( `articleid` = 27 ) LIMIT 1   [ RunTime:0.000324s ]
+SQL: SELECT * FROM `lj_articlereview` WHERE ( `articleid` = 27 ) ORDER BY addtime desc LIMIT 0,5   [ RunTime:0.000308s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.003745s ]
+SQL: SELECT `username`,`middlepicture` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006451' ) LIMIT 1   [ RunTime:0.000293s ]
+SQL: SELECT `username`,`middlepicture` FROM `lj_user` WHERE ( 1=1 AND userid='AP1006419' ) LIMIT 1   [ RunTime:0.000178s ]
+SQL: SELECT * FROM `lj_user` WHERE ( `userid` = null )  [ RunTime:0.000153s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.000901s ]
+INFO: [ view_template ] --END-- [ RunTime:0.000975s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: userid F:\server\workspace\wyulianjiang\LjHome\Runtime\Cache\593ab7d473c9f7b42dec8077252778e0.php 第 395 行.
+NOTIC: [8] Undefined index: userid F:\server\workspace\wyulianjiang\LjHome\Runtime\Cache\593ab7d473c9f7b42dec8077252778e0.php 第 403 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.014097s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014166s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.000630s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.000367s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.000273s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.000440s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001854s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.000568s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000628s ]
+

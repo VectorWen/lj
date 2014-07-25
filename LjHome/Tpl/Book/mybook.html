@@ -1,0 +1,72 @@
+<script>
+	$(function(){
+		$("#uploadbook").click(function(){
+			window.location="__URL__/searchbook";
+		});
+	});
+</script>
+<div class="content" style="margin-top: 10px; height: 750px">
+	<div class="classifynavigation">
+		<include file="./book_classifynavigation" />
+	</div>
+	<div class="classifycontent">
+	<form id="mybookform">
+		<table width="100%" height="26" border="0" cellpadding="0"
+			cellspacing="0" background="__PUBLIC__/Images/tbg.jpg" 
+			class="table">
+			<tbody>
+				<tr>
+					<td width="35" align="center"><img
+						src="__PUBLIC__/Images/sp.gif" 
+						width="5" height="12"></td>
+					<td class="fontg" style="margin-top: 2px"><p>我的借架</p></td>
+					<td class="fontg" align="right" style="margin-top: 2px">
+							<img id="uploadbook" title="上传" src="__BUTTON__/uploadbtn.png" class="btn"/> 
+					</td>
+					<td>
+					&nbsp;
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="clist">
+			<ul>
+
+				<volist name="books" id="book">
+				<li><a href="__URL__/details?borrowid=<{$book.borrowid}>">
+						<img class="imgc" src="<{$book.book.cover}>">
+				</a>
+					<p>
+						<a href="__URL__/details?borrowid=<{$book.borrowid}>"><b><{$book.book.bookname}></b></a>
+					</p>
+					<p>作者：<{$book.book.author}></p>
+					<p>价格 : <{$book.book.price}>元</p>
+					<p>上传者：<a href="__APP__/User/getUser?userid=<{$book.offerid}>" target="_blank"><{$book.offeruser}></a></p> 状态： <if
+						condition="$book.status eq 0"> 未借 <a
+						href="__URL__/deletebook?borrowid=<{$book.borrowid}>">删除</a> <elseif
+						condition="$book.status eq 1" /> <span style="color: red;">已预订
+
+					<p>
+							<a href="__URL__/borrowed?borrowid=<{$book.borrowid}>">确认借出 </a> <a
+								href="__URL__/refuse?borrowid=<{$book.borrowid}>"> 拒绝</a>
+					</p>
+					</span>
+					
+					<elseif condition="$book.status eq 3" /> 等待对方确认 <elseif
+						condition="$book.status eq 2" /> 对方确认已借
+					<p>
+						<a href="__URL__/borrowed?borrowid=<{$book.borrowid}>"> 确认借出</a>
+					</p>
+					<else /> 已借 </if></li>
+				</volist>
+
+			</ul>
+
+		</div>
+		<div class="page" style="clear: both; margin-left: 20px;">
+			<span><{$show}></span>
+		</div>
+		</form>
+	</div>
+</div>

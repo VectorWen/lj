@@ -1,0 +1,57 @@
+<div class="content" style="margin-top: 10px;height: 750px;">
+	<div class="classifynavigation">
+		<include file="./book_classifynavigation" />
+	</div>
+	<div class="classifycontent">
+
+		<table width="100%" height="26" border="0" cellpadding="0"
+			cellspacing="0" background="__PUBLIC__/Images/tbg.jpg" 
+			class="table">
+			<tbody>
+				<tr>
+					<td width="35" align="center"><img
+						src="__PUBLIC__/Images/sp.gif" 
+						width="5" height="12"></td>
+					<td class="fontg" style="margin-top: 2px"><p>已借的书</p></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="clist">
+			<ul>
+
+				<volist name="books" id="book">
+				<li><a href="__URL__/details?borrowid=<{$book.borrowid}>">
+						<img class="imgc" src="<{$book.book.cover}>">
+				</a>
+					<p>
+						<a href="__URL__/details?borrowid=<{$book.borrowid}>"><b><{$book.book.bookname}></b></a>
+					</p>
+					<p>作者：<{$book.book.author}></p>
+					<p>价格 : <{$book.book.price}></p>
+					<p>上传者：<a href="__APP__/User?userid=<{$book.offerid}>"><{$book.offeruser}></a></p> 状态： <if
+						condition="$book.status eq 0"> 未借 <a
+						href="__URL__/deletebook?borrowid=<{$book.borrowid}>">预订</a> <elseif
+						condition="$book.status eq 1" /> <span style="color: red;">已预订</span>
+					<p>
+						<a href="__URL__/retreat?borrowid=<{$book.borrowid}>">退订 </a><a
+							href="__URL__/borrowed?borrowid=<{$book.borrowid}>"> 确认已借</a>
+					</p>
+
+					<elseif condition="$book.status eq 2" /> 等待对方确认 <elseif
+						condition="$book.status eq 3" />
+					<p>
+						对方确认已借 <a href="__URL__/borrowed?borrowid=<{$book.borrowid}>">
+							确认已借</a>
+					</p>
+					<else /> 已借 </if></li>
+				</volist>
+
+			</ul>
+
+		</div>
+		<div class="page" style="clear: both; margin-left: 20px;">
+			<span><{$show}></span>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,95 @@
+<taglib name='Message' />
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Simple Examples</title>
+		<style>
+		form { 
+						margin:0 auto;
+			}
+		form input{
+			height:21px;
+		}
+		form img {
+						position:relative;
+						top:8px;
+		}
+			textarea 
+				{
+				display: block;
+				}
+			.message{
+				margin-top:5px;
+			}
+			.code.submit
+			{
+				margin-top:0px;
+			}
+		</style>
+		<link rel="stylesheet" href="__PUBLIC__/Editor/themes/default/default.css" />
+		<script charset="utf-8" src="__PUBLIC__/Editor/kindeditor-min.js"></script>
+		<script charset="utf-8" src="__PUBLIC__/Editor/themes/lang/zh_CN.js"></script>
+		<script>
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="content"]', {
+					resizeType : 1,
+					allowPreviewEmoticons : true,
+					allowImageUpload : true,
+					items : [
+						'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+						'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+						'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+				});
+			});
+		</script>
+	</head>
+	<body>
+		   <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" height="30" background="__IMAGES__/detailtitle.gif" class="table">
+        <tbody>
+        <tr> 
+          <td width="10" align="center"></td>
+          <td> 发表评论</td>
+        </tr>
+      </tbody>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table">
+		<tr>
+			<td width="40%">
+				 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+				 	<tr>
+				 		<td width="50" align="center">
+				 			<img src="__IMAGES__/Head/<{$user[0].upic2}>" title="<{$user[0].uname}>" width="50" height="50"/>
+				 		</td>
+				 	</tr>
+				 	<tr>
+				 		<td align="center"><{$user[0].uid}><br/><{$user[0].uname}></td>
+				 	</tr>	
+				 </table>
+			</td>
+			<td width="60%">
+				<form action="__APP__/Artreview/doreview/" method="post">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						
+						<tr>
+							<td> 
+								<input type="hidden" name="artid" value="<{$news[0].artid}>">
+								<textarea name="content" style="height:100px;visibility:hidden;">
+								</textarea>
+							</td>
+							</tr>
+							<tr>
+								<td>
+								<input type="text" name="code" size="2" id='code'/>
+								<Message:code width='45' height='25'/>
+								<input type="submit" value="评论" height="25" id="submit"/> 
+								</td>
+							</tr>
+					</table>
+				</form>
+			</td>
+		</tr>
+		</table>
+	</body>
+</html>

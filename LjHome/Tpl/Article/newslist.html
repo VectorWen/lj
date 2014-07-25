@@ -1,0 +1,57 @@
+<div class="content" style="margin-top: 10px;height:600px">
+	<div class="classifynavigation">
+		<include file="new_classifynavigation" />
+	</div>
+	<div class="classifycontent">
+	<table width="100%" height="26" border="0" cellpadding="0"
+			cellspacing="0" background="__PUBLIC__/Images/tbg.jpg"
+			class="table">
+			<tbody>
+				<tr>
+					<td width="35" align="center"><img src="__PUBLIC__/Images/sp.gif" width="5" height="12"></td>
+					<td class="fontg" style="margin-top: 2px"><a href="__ROOT__/"  target="_self" >首页</a>&gt;&gt;同乡新闻</td></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="content">
+			<div class="detail">
+                <table width="100%" height="120" border="0" cellpadding="0" cellspacing="1">
+                    <tbody>
+                    	<tr>
+                      <td valign="top">
+						<table width="98%" border="0" cellspacing="0" cellpadding="0">
+						  
+						  <tbody>
+						 	 <volist id="news" name="news">
+									<tr>
+										<td width="28" align="center">
+										<img src="__PUBLIC__/Images/items.gif" width="16" height="14"></td>
+	
+										<td height="30"><a href="__URL__/detail/articleid/<{$news.articleid}>" 
+											class="tList" target="_self" style='font-size:14px'><{$news.title}></a>
+											</td>
+									</tr>
+									<tr>
+										<td width="28" align="center">&nbsp;</td>
+										<td>【<{$news.name}>】&nbsp;&nbsp; <{$news.adminname}> &nbsp;&nbsp; [<{$news.addtime|date='Y-m-d H:i:s',###}>]</td>
+									</tr>
+									
+									<tr>
+										<td colspan=2 background="__PUBLIC__/Images/line.gif" height=3></td>
+									</tr>
+
+							</volist>
+							
+						</tbody>
+					</table>
+						</td>
+                    </tr>
+                    <tr>
+                   <td align="center" style='font-size:14px'> <{$show}></td>
+                    </tr>
+                  </tbody>
+                 </table>
+			</div>
+		</div>
+	</div>
+</div>

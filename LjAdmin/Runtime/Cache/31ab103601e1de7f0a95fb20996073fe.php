@@ -1,0 +1,158 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" rev="stylesheet" href="__CSS__/admin_style.css" type="text/css" media="all"/>
+<script language="javascript" type="text/javascript" src="__JS__/jQuery.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+$(document).ready(function(){
+
+	  $("#add").click(function(){
+		 var val= $('input[name="adminid"]').val();
+		 if(val!=null && val !="")
+			 {
+				  $("#addform").attr("action","__URL__/addadmin/");
+				  $("#addform").submit();
+			 }
+		 else{
+			    alert("账号不能为空");
+			    $("#addform").focus();
+		 }
+	  });
+	  
+		var error=new Array();
+		$('input[name="adminid"]').blur(function(){
+			var adminid=$(this).val();
+    		var regex = /[a-zA-Z0-9]\w{4,}/;
+    		if (!regex.exec(adminid))
+    		{// 非数字
+    	          alert('管理员账户至少5个字符以上');
+    	          $(this).focus();//聚焦在输入域
+    			  return false;
+    			}
+			$.get('__URL__/checkId',{'adminid':adminid},function(data){
+				if(data=='不允许'){
+					error['adminid']=1;
+					$('#umessage').remove();
+					$('input[name="adminid"]').after('<span id="umessage" style="color:red">管理员已存在</span>');
+					$('input[name="adminid"]').focus();
+				}else{
+					error['adminid']=0;
+					$('#umessage').remove();
+				}
+			});	
+		});
+		
+		$('input[name="repassword"]').blur(function(){
+			var repwd=$(this).val();
+			var pwd=$('input[name="password"]').val();
+			if(repwd==null || repwd=="")
+				{
+				    alert("重复密码不能为空！！");
+				}
+			 else if(pwd!=repwd)
+				{
+				   alert("两次输入的密码不一致");
+				   $(this).focus();
+				}
+		});
+		
+		$('input[name="password"]').blur(function(){
+			var p=$(this).val();
+			var regex = /[a-zA-Z0-9]\w{6,}/;
+		 	if(p==null || p=="")
+			{
+			    alert("密码不能为空！！");
+			 
+			}
+		 	 else if (!regex.exec(p))
+    		{// 非数字
+    	          alert('密码至少7个字符以上');
+    	          $(this).focus();//聚焦在输入域
+    			  return false;
+    		}  
+		});
+	});
+</script>
+</head>
+
+<body class="ContentBody">
+  <form id="addform"  method="post" enctype="multipart/form-data">
+<div class="MainDiv">
+<table width="99%" border="0" cellpadding="0" cellspacing="0" class="CContent">
+  <tr>
+      <th class="tablestyle_title" >添加管理员</th>
+  </tr>
+  <tr>
+    <td class="CPanel" align="center">
+		<table border="0" cellpadding="0" cellspacing="0" style="width:90%">
+			<TR>
+				<TD width="90%" align="center" >
+					<fieldset style="height:100%;float-left:auto;float-right:auto;">
+						<legend>管理员信息</legend>
+					  <table border="0" cellpadding="2" cellspacing="1" >  
+						  <tr>
+						    <td  align="right"  height="30">
+						    	<label>管理员账号：</label>
+						    </td>
+						    <td align="left"> 
+						    <input name="adminid" type="text" class="text" /> 
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right"  height="30">
+						    	<label>管理员名称：</label>
+						    </td>
+						    <td align="left"> 
+						    <input name="adminname" type="text"  class="text"/>
+						    </td>
+						  </tr>
+						  <tr>
+						    <td  align="right"  height="30">
+						    	<label>管理员密码：</label>
+						    </td>
+						    <td align="left"> 
+						    <input  name="password" type="password"  class="text"/>
+						    </td>
+						  </tr>
+						  <tr>
+						    <td  align="right"  height="30">
+						    	<label>重复密码：</label>
+						    </td>
+						    <td align="left"> 
+						    <input name="repassword" type="password"  class="text"/>
+						    </td>
+						  </tr>
+					
+					
+					 	<tr>
+					 	<td>&nbsp;</td>
+					 		<td colspan="2">
+					 			<br/>
+					 		   <span id="btn2" >
+						 			<input type="button" id="add" value="保存"/>　
+					 		   </span>
+					 		</td>
+					 		
+					 	</tr>
+					  </table>
+					 
+			  <br />
+				</fieldset>			
+				</TD> 
+		</TR>
+		</TABLE> 
+	 </td>
+  </tr> 
+		<TR>
+			<TD colspan="2" align="center" height="50px">
+			&nbsp;
+			</TD>
+		</TR>
+		</TABLE>
+</div>
+</form>
+</body>
+</html>

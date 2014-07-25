@@ -1,0 +1,182 @@
+<script language="JavaScript" type="text/javascript">
+window.onload=function(){
+	/* var a=<{$user[0].userid}>
+	alert(a); */
+	/* if(<{$Think.session.userid == $user[0].userid}>)
+	{
+		alert("q");
+		//$("#btn1").show();
+	} */
+} 
+
+$(document).ready(function(){
+	
+	if(<{$user[0].sex}>==0)
+	{
+		document.getElementsByName('sex')[0].checked='checked';
+	}
+	else
+	{
+		document.getElementsByName('sex')[1].checked='checked';
+	}
+
+	  $("#modify").click(function(){
+		  $("input#userinfo").attr("readOnly",false);
+		  $("input#userinfo").attr("id"," ");
+		  $("#btn1").hide()
+		  $("#btn2").show()
+	  });
+	  
+	  $("#saveUser").click(function(){
+		  //$("#saveform").attr("action","__URL__/saveUser/");
+		  $("#saveForm").submit();
+	  });
+	  
+	  $("#editorhead").click(function(){
+		 window.location="__URL__/headimg";
+	  });
+	  
+	});
+</script>
+<style type="text/css">
+#userinfo{
+	border-left:0px;
+	border-top:0px;
+	border-right:0px;
+	border-bottom:1px; 
+	background-color:transparent;
+}
+</style>
+
+<div class="content" style="margin-top: 10px;height: 750px;">
+	<div class="classifynavigation">
+		<include file="./user_classifynavigation" />
+	</div>
+	<div class="classifycontent"> 
+		<table width="100%" height="26" border="0" cellpadding="0"
+			cellspacing="0" background="__PUBLIC__/Images/tbg.jpg"
+			class="table">
+			<tbody>
+				<tr>
+					<td width="35" align="center"><img
+						src="__PUBLIC__/Images/sp.gif"
+						width="5" height="12"></td>
+					<td class="fontg" style="margin-top: 2px"><p>个人资料</p></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="preview_list" style="float: left; padding-left:100px ">
+		    <form id="saveForm" action="__URL__/saveUser" method="post">
+			      <table border="0" cellpadding="2" cellspacing="1" style="width:100%">  
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+						    </td>
+						    <td align="left"> 
+						    <label><{$user[0].userid}></label>
+						    <input id="userinfo" name="userid" type="hidden" value="<{$user[0].userid}>" />
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</label>
+						    </td>
+						    <td align="left"> 
+						    <input id="userinfo" name="username" type="text" readonly="readonly" class="text"  value="<{$user[0].username}>" />
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+						    </td>
+						    <td align="left"> 
+						   	<input type="radio" name="sex" value="0" readonly="readonly" />男<input type="radio" name="sex" value="1" readonly="readonly"/>女
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</label>
+						    </td>
+						    <td align="left"> 
+						    <input id="userinfo" name="specialty" type="text" readonly="readonly" class="text"  value="<{$user[0].specialty}>" />
+						    </td>
+						  </tr>
+					  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</label>
+						    </td>
+						    <td align="left"> 
+						    <input id="userinfo" name="phone" type="text" readonly="readonly" class="text"  value="<{$user[0].phone}>" />
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>短&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+						    </td>
+						    <td align="left"> 
+						    	<input id="userinfo" name="shortphone" type="text" readonly="readonly" class="text"  value="<{$user[0].shortphone}>" />
+						    </td>
+						  </tr>
+						  
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>入学年份：</label>
+						    </td>
+						    <td align="left"> 
+						    	<input id="userinfo" name="entryyear" type="text" readonly="readonly" class="text"  value="<{$user[0].entryyear}>" />
+						    </td>
+						  </tr>
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>学校地址：</label>
+						    </td>
+						    <td align="left"> 
+						    <input id="userinfo" name="schooladdress" type="text" readonly="readonly" class="text"  value="<{$user[0].schooladdress}>" />
+						    </td>
+						  </tr>
+					
+						  <tr>
+						    <td  align="right" width="30%" height="30">
+						    	<label>家乡地址：</label>
+						    </td>
+						    <td align="left"> 
+						    <input id="userinfo" name="homeaddress" type="text" readonly="readonly" class="text"  value="<{$user[0].homeaddress}>" />
+						    </td>
+						  </tr>
+					
+					 	<tr>
+					 	<td>&nbsp;</td>
+					 		<td colspan="2">
+					 			<br/> 
+					 			<if condition="($Think.session.userid neq $user[0][userid])">
+					 			<else/>
+					 			 	<span id="btn1">
+						 				<img id="modify" src="__BUTTON__/modifybtn.png"  class="btn"/>
+						 			</span>
+					 		    </if> 
+					 		   <span id="btn2" style="display:none">
+						 			<img id="saveUser" src="__BUTTON__/savebtn.png" class="btn"/>　
+					 		   </span>
+					 		</td>
+					 		
+					 	</tr>
+					  </table>
+			</form>
+		</div>
+		<div class="preview_list" style="float: left;padding-left:10px">
+		<if condition="($user[0]['bigpicture'] eq null)"> <img alt="" src="__IMAGES__/Head/defaultb.png"/>  
+		<else/><img alt="" src="__IMAGES__/Head/<{$user[0].bigpicture}>"/> 
+		</if>
+		<br/>
+		<div style="height:10px;">&nbsp;</div>
+		<if condition="($Think.session.userid eq $user[0][userid])">
+		<button id="editorhead" style="width: 162px;height:30px;">编辑头像</button>
+		</if>
+		</div>
+	</div>
+</div>
