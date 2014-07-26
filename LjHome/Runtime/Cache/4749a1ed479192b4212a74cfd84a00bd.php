@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>五邑大学廉江同乡会</title>
+<link href="__IMAGES__/favicon.ico" type="image/x-icon" rel="shortcut icon" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/style.css" />
 <script type="text/javascript" src="__PUBLIC__/Js/jquery.min.js"></script>
 <style>
@@ -112,12 +113,12 @@
 										<td width="10" align="center"><img
 											src="__PUBLIC__/Images/menudivid.gif" width="2" height="44" /></td>
 
-										<!-- <td align="center" style="padding-top: 1px"><a
+										 <td align="center" style="padding-top: 1px"><a
 											href="__APP__/Discuss/"
 											class="menu" target="_self">同乡交流</a></td>
 										<td width="10" align="center"><img
 											src="__PUBLIC__/Images/menudivid.gif" width="2" height="44" /></td>
-											 -->
+											
 										<td align="center" style="padding-top: 1px"><a
 											href="__APP__/User/"
 											class="menu" target="_self">用户中心</a></td>

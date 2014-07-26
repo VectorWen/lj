@@ -618,3 +618,324 @@ INFO: [ view_end ] --START--
 INFO: Run ShowPageTrace Behavior [ RunTime:0.001528s ]
 INFO: [ view_end ] --END-- [ RunTime:0.001779s ]
 
+[ 2014-07-25T18:45:34+08:00 ] 127.0.0.1 /lj/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.010574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.036778s ]
+SQL: SHOW COLUMNS FROM `lj_source` [ RunTime:0.565624s ]
+SQL: SELECT `sourceid`,`showname` FROM `lj_source` WHERE ( `status` = 0 ) ORDER BY downloadcount desc LIMIT 5   [ RunTime:0.120131s ]
+SQL: SHOW COLUMNS FROM `lj_showpicture` [ RunTime:0.067829s ]
+SQL: SELECT * FROM `lj_showpicture` WHERE ( status=1 ) ORDER BY showpictureid desc LIMIT 10   [ RunTime:0.011598s ]
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.091104s ]
+SQL: SELECT `articleid`,`title`,`slidepicture` FROM `lj_article` WHERE ( slidestatus=1 ) ORDER BY addtime desc LIMIT 5   [ RunTime:0.011061s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=0 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.066820s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.004864s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.003476s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'contact' )  [ RunTime:0.001307s ]
+SQL: SHOW COLUMNS FROM `lj_link` [ RunTime:0.050159s ]
+SQL: SELECT * FROM `lj_link` WHERE ( linkstatus=0 ) ORDER BY linkid LIMIT 5   [ RunTime:0.001428s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=1 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.000445s ]
+SQL: SHOW COLUMNS FROM `lj_activity` [ RunTime:0.042318s ]
+SQL: SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4   [ RunTime:0.000508s ]
+ERR: Unknown column 'status' in 'where clause'
+ [ SQL语句 ] : SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4  
+SQL: SHOW COLUMNS FROM `lj_borrow` [ RunTime:0.040635s ]
+SQL: SELECT * FROM `lj_borrow` ORDER BY borrowid desc LIMIT 4   [ RunTime:0.056012s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.256674s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.096783s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000434s ]
+SQL: SHOW COLUMNS FROM `lj_book` [ RunTime:0.034538s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787111330233' ) LIMIT 1   [ RunTime:0.023601s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000401s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000282s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787040119443' ) LIMIT 1   [ RunTime:0.000247s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000198s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='sdsd' ) LIMIT 1   [ RunTime:0.000205s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000170s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000189s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='dvsdf' ) LIMIT 1   [ RunTime:0.000210s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.016069s ]
+INFO: [ view_template ] --END-- [ RunTime:0.016165s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  contacttitle F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 320 行.
+NOTIC: [8] Undefined index:  contactaddress F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 330 行.
+NOTIC: [8] Undefined index:  contactphone F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 339 行.
+NOTIC: [8] Undefined index:  contactpostcode F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 348 行.
+NOTIC: [8] Undefined index:  contactemail F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 357 行.
+NOTIC: [8] Undefined index:  contactwebsite F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 366 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.495799s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.495918s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.001911s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001223s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.006226s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010925s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.013501s ]
+INFO: [ view_end ] --END-- [ RunTime:0.013607s ]
+
+[ 2014-07-25T18:45:36+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2014-07-25T19:03:32+08:00 ] 127.0.0.1 /lj/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001487s ]
+SQL: SHOW COLUMNS FROM `lj_source` [ RunTime:0.003141s ]
+SQL: SELECT `sourceid`,`showname` FROM `lj_source` WHERE ( `status` = 0 ) ORDER BY downloadcount desc LIMIT 5   [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `lj_showpicture` [ RunTime:0.003687s ]
+SQL: SELECT * FROM `lj_showpicture` WHERE ( status=1 ) ORDER BY showpictureid desc LIMIT 10   [ RunTime:0.001232s ]
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.006175s ]
+SQL: SELECT `articleid`,`title`,`slidepicture` FROM `lj_article` WHERE ( slidestatus=1 ) ORDER BY addtime desc LIMIT 5   [ RunTime:0.001960s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=0 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.000736s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.006432s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.004167s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'contact' )  [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `lj_link` [ RunTime:0.008574s ]
+SQL: SELECT * FROM `lj_link` WHERE ( linkstatus=0 ) ORDER BY linkid LIMIT 5   [ RunTime:0.003048s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=1 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `lj_activity` [ RunTime:0.009353s ]
+SQL: SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4   [ RunTime:0.000923s ]
+ERR: Unknown column 'status' in 'where clause'
+ [ SQL语句 ] : SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4  
+SQL: SHOW COLUMNS FROM `lj_borrow` [ RunTime:0.004078s ]
+SQL: SELECT * FROM `lj_borrow` ORDER BY borrowid desc LIMIT 4   [ RunTime:0.017606s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.004563s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.001799s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000492s ]
+SQL: SHOW COLUMNS FROM `lj_book` [ RunTime:0.004715s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787111330233' ) LIMIT 1   [ RunTime:0.001741s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000351s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000216s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787040119443' ) LIMIT 1   [ RunTime:0.000315s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000214s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='sdsd' ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000282s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000209s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='dvsdf' ) LIMIT 1   [ RunTime:0.000570s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.002882s ]
+INFO: [ view_template ] --END-- [ RunTime:0.003072s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  contacttitle F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 320 行.
+NOTIC: [8] Undefined index:  contactaddress F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 330 行.
+NOTIC: [8] Undefined index:  contactphone F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 339 行.
+NOTIC: [8] Undefined index:  contactpostcode F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 348 行.
+NOTIC: [8] Undefined index:  contactemail F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 357 行.
+NOTIC: [8] Undefined index:  contactwebsite F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 366 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.078034s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078173s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.003883s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.002966s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.002342s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.002123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.011836s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.002232s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002377s ]
+
+[ 2014-07-25T19:03:33+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2014-07-25T23:01:49+08:00 ] 127.0.0.1 /lj/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.132706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.167643s ]
+SQL: SHOW COLUMNS FROM `lj_source` [ RunTime:0.755506s ]
+SQL: SELECT `sourceid`,`showname` FROM `lj_source` WHERE ( `status` = 0 ) ORDER BY downloadcount desc LIMIT 5   [ RunTime:0.119981s ]
+SQL: SHOW COLUMNS FROM `lj_showpicture` [ RunTime:0.070044s ]
+SQL: SELECT * FROM `lj_showpicture` WHERE ( status=1 ) ORDER BY showpictureid desc LIMIT 10   [ RunTime:0.003537s ]
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.232179s ]
+SQL: SELECT `articleid`,`title`,`slidepicture` FROM `lj_article` WHERE ( slidestatus=1 ) ORDER BY addtime desc LIMIT 5   [ RunTime:0.008601s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=0 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.052998s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.062632s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.006068s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'contact' )  [ RunTime:0.079128s ]
+SQL: SHOW COLUMNS FROM `lj_link` [ RunTime:0.254193s ]
+SQL: SELECT * FROM `lj_link` WHERE ( linkstatus=0 ) ORDER BY linkid LIMIT 5   [ RunTime:0.001284s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=1 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `lj_activity` [ RunTime:0.040118s ]
+SQL: SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4   [ RunTime:0.001708s ]
+ERR: Unknown column 'status' in 'where clause'
+ [ SQL语句 ] : SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4  
+SQL: SHOW COLUMNS FROM `lj_borrow` [ RunTime:0.044978s ]
+SQL: SELECT * FROM `lj_borrow` ORDER BY borrowid desc LIMIT 4   [ RunTime:0.002103s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.022216s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.034136s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.001061s ]
+SQL: SHOW COLUMNS FROM `lj_book` [ RunTime:0.040385s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787111330233' ) LIMIT 1   [ RunTime:0.161183s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000954s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000808s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787040119443' ) LIMIT 1   [ RunTime:0.000480s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000673s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000713s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='sdsd' ) LIMIT 1   [ RunTime:0.000499s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000861s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000562s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='dvsdf' ) LIMIT 1   [ RunTime:0.000455s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.033661s ]
+INFO: [ view_template ] --END-- [ RunTime:0.033838s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  userid F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 250 行.
+NOTIC: [8] Undefined index:  contacttitle F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 320 行.
+NOTIC: [8] Undefined index:  contactaddress F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 330 行.
+NOTIC: [8] Undefined index:  contactphone F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 339 行.
+NOTIC: [8] Undefined index:  contactpostcode F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 348 行.
+NOTIC: [8] Undefined index:  contactemail F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 357 行.
+NOTIC: [8] Undefined index:  contactwebsite F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 366 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.780999s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.781177s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.010749s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.004497s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.002972s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.005065s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.024108s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.003728s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003866s ]
+
+[ 2014-07-25T23:01:50+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2014-07-25T23:25:10+08:00 ] 127.0.0.1 /lj/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002836s ]
+SQL: SHOW COLUMNS FROM `lj_source` [ RunTime:0.010762s ]
+SQL: SELECT `sourceid`,`showname` FROM `lj_source` WHERE ( `status` = 0 ) ORDER BY downloadcount desc LIMIT 5   [ RunTime:0.004328s ]
+SQL: SHOW COLUMNS FROM `lj_showpicture` [ RunTime:0.010150s ]
+SQL: SELECT * FROM `lj_showpicture` WHERE ( status=1 ) ORDER BY showpictureid desc LIMIT 10   [ RunTime:0.002719s ]
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.010046s ]
+SQL: SELECT `articleid`,`title`,`slidepicture` FROM `lj_article` WHERE ( slidestatus=1 ) ORDER BY addtime desc LIMIT 5   [ RunTime:0.002264s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=0 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.010907s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.008754s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'contact' )  [ RunTime:0.000860s ]
+SQL: SHOW COLUMNS FROM `lj_link` [ RunTime:0.009413s ]
+SQL: SELECT * FROM `lj_link` WHERE ( linkstatus=0 ) ORDER BY linkid LIMIT 5   [ RunTime:0.002981s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=1 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.001175s ]
+SQL: SHOW COLUMNS FROM `lj_activity` [ RunTime:0.011369s ]
+SQL: SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4   [ RunTime:0.000677s ]
+ERR: Unknown column 'status' in 'where clause'
+ [ SQL语句 ] : SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4  
+SQL: SHOW COLUMNS FROM `lj_borrow` [ RunTime:0.014558s ]
+SQL: SELECT * FROM `lj_borrow` ORDER BY borrowid desc LIMIT 4   [ RunTime:0.001024s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.009903s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.002484s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000474s ]
+SQL: SHOW COLUMNS FROM `lj_book` [ RunTime:0.009211s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787111330233' ) LIMIT 1   [ RunTime:0.003106s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000553s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000477s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787040119443' ) LIMIT 1   [ RunTime:0.000568s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000641s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.001171s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='sdsd' ) LIMIT 1   [ RunTime:0.000815s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='11070512' ) LIMIT 1   [ RunTime:0.000559s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000982s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='dvsdf' ) LIMIT 1   [ RunTime:0.000750s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.003907s ]
+INFO: [ view_template ] --END-- [ RunTime:0.004105s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  userid F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 250 行.
+NOTIC: [8] Undefined index:  contacttitle F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 320 行.
+NOTIC: [8] Undefined index:  contactaddress F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 330 行.
+NOTIC: [8] Undefined index:  contactphone F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 339 行.
+NOTIC: [8] Undefined index:  contactpostcode F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 348 行.
+NOTIC: [8] Undefined index:  contactemail F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 357 行.
+NOTIC: [8] Undefined index:  contactwebsite F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 366 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.097904s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.098177s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.003639s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.003689s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.002663s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.002800s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013383s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.003300s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003464s ]
+
+[ 2014-07-25T23:25:11+08:00 ] ERR: (ThinkException) 非法操作:images
+[ 2014-07-25T23:26:40+08:00 ] ERR: (ThinkException) Unknown database 'wyulj'
+[ 2014-07-25T23:27:12+08:00 ] 127.0.0.1 /lj/
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.004033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004397s ]
+SQL: SHOW COLUMNS FROM `lj_source` [ RunTime:0.018221s ]
+SQL: SELECT `sourceid`,`showname` FROM `lj_source` WHERE ( `status` = 0 ) ORDER BY downloadcount desc LIMIT 5   [ RunTime:0.001383s ]
+SQL: SHOW COLUMNS FROM `lj_showpicture` [ RunTime:0.007858s ]
+SQL: SELECT * FROM `lj_showpicture` WHERE ( status=1 ) ORDER BY showpictureid desc LIMIT 10   [ RunTime:0.003287s ]
+SQL: SHOW COLUMNS FROM `lj_article` [ RunTime:0.011253s ]
+SQL: SELECT `articleid`,`title`,`slidepicture` FROM `lj_article` WHERE ( slidestatus=1 ) ORDER BY addtime desc LIMIT 5   [ RunTime:0.000779s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=0 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.003272s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.007885s ]
+SQL: SHOW COLUMNS FROM `lj_website` [ RunTime:0.025361s ]
+SQL: SELECT * FROM `lj_website` WHERE ( `group` = 'contact' )  [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `lj_link` [ RunTime:0.007057s ]
+SQL: SELECT * FROM `lj_link` WHERE ( linkstatus=0 ) ORDER BY linkid LIMIT 5   [ RunTime:0.003354s ]
+SQL: SELECT `articleid`,`title`,`addtime` FROM `lj_article` WHERE ( classid=1 ) ORDER BY priority,addtime desc LIMIT 5   [ RunTime:0.001564s ]
+SQL: SHOW COLUMNS FROM `lj_activity` [ RunTime:0.011868s ]
+SQL: SELECT `activityid`,`title`,`begintime` FROM `lj_activity` WHERE ( status=0 ) ORDER BY priority,begintime desc LIMIT 4   [ RunTime:0.004327s ]
+SQL: SHOW COLUMNS FROM `lj_borrow` [ RunTime:0.007914s ]
+SQL: SELECT * FROM `lj_borrow` ORDER BY borrowid desc LIMIT 4   [ RunTime:0.005829s ]
+SQL: SHOW COLUMNS FROM `lj_user` [ RunTime:0.009861s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='ap1006454' ) LIMIT 1   [ RunTime:0.002320s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000835s ]
+SQL: SHOW COLUMNS FROM `lj_book` [ RunTime:0.011741s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9781840785371' ) LIMIT 1   [ RunTime:0.001300s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='ap1006429' ) LIMIT 1   [ RunTime:0.000976s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000811s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787040195835' ) LIMIT 1   [ RunTime:0.002817s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='AP1006453' ) LIMIT 1   [ RunTime:0.000584s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000867s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787550228559' ) LIMIT 1   [ RunTime:0.000643s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='AP1006453' ) LIMIT 1   [ RunTime:0.001006s ]
+SQL: SELECT * FROM `lj_user` WHERE ( 1=1 AND userid='' ) LIMIT 1   [ RunTime:0.000604s ]
+SQL: SELECT * FROM `lj_book` WHERE ( 1=1 AND isbn='9787807590231' ) LIMIT 1   [ RunTime:0.001037s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.006180s ]
+INFO: [ view_template ] --END-- [ RunTime:0.006465s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index:  userid F:\software\php\PHPnow-1.5.6\htdocs\lj\LjHome\Runtime\Cache\9db315b8a37b3c9f6a562a8ca9a15572.php 第 250 行.
+INFO: Run ParseTemplate Behavior [ RunTime:0.188303s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.189164s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.005073s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.002977s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.002966s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.003238s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.014900s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.003806s ]
+INFO: [ view_end ] --END-- [ RunTime:0.004012s ]
+
+[ 2014-07-25T23:27:16+08:00 ] 127.0.0.1 /lj/index.php/Discuss/
+INFO: [ route_check ] --START--
+INFO: Run CheckRoute Behavior [ RunTime:0.005928s ]
+INFO: [ route_check ] --END-- [ RunTime:0.006256s ]
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002654s ]
+INFO: [ view_template ] --START--
+INFO: Run LocationTemplate Behavior [ RunTime:0.004923s ]
+INFO: [ view_template ] --END-- [ RunTime:0.005261s ]
+INFO: [ view_parse ] --START--
+INFO: Run ParseTemplate Behavior [ RunTime:0.256443s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.256687s ]
+INFO: [ view_filter ] --START--
+INFO: Run ContentReplace Behavior [ RunTime:0.003540s ]
+INFO: Run TokenBuild Behavior [ RunTime:0.001817s ]
+INFO: Run WriteHtmlCache Behavior [ RunTime:0.001191s ]
+INFO: Run ShowRuntime Behavior [ RunTime:0.001334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008500s ]
+INFO: [ view_end ] --START--
+INFO: Run ShowPageTrace Behavior [ RunTime:0.002493s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002761s ]
+
+[ 2014-07-25T23:43:15+08:00 ] ERR: (ThinkException) Access denied for user 'huanglw'@'localhost' (using password: YES)
+[ 2014-07-25T23:55:05+08:00 ] ERR: (ThinkException) 无法加载模块:Test
+[ 2014-07-25T23:55:28+08:00 ] ERR: (ThinkException) Access denied for user 'huanglw'@'localhost' (using password: YES)
