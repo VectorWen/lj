@@ -6,18 +6,11 @@ class UserAction extends CommonAction {
 	 */
 	public function index() {
 		$user=D("User");
-		$userid=$_SESSION['userid'];
-		if($userid==null||$userid=="")
-		{
-			$this->redirect("Login/login");
-		}
-		else 
-		{
-		$where['userid']=$userid;
+		$user_id=$_SESSION['user_id'];
+		$where['user_id']=$user_id;
 		$arr=$user->where($where)->select();  
 		$this->assign("user",$arr);
 		$this->display ();
-		}
 	}
 	
 	/**

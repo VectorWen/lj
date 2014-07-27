@@ -21,4 +21,12 @@ while($row=mysql_fetch_row($res)){
 //释放资源
 mysql_free_result($res);
 mysql_close($conn);  // 可以不要
+
+echo '<br />';
+echo '%E6';
+
+echo $_GET['m'];
+
+echo md5('123456789');
+
 ?>

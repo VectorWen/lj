@@ -12,7 +12,7 @@
 					'__BUTTON__'=>__ROOT__.'/Public/Images/Button',
 				), 
 				'URL_CASE_INSENSITIVE'=>true,//url不区分大小写 
-				'URL_HTML_SUFFIX'=>'html|shtml|xml|htm',//限制伪静态的后缀 
+				//'URL_HTML_SUFFIX'=>'html|shtml|xml|htm',//限制伪静态的后缀 
 				'VAR_PAGE'=>'page', //设置分页显示URL 
 		);
 ?>

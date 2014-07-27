@@ -6,24 +6,27 @@ class LoginAction extends Action {
 	 */
 	public function login() {
 		//如果没有同时输入密码和账号，就是不登陆
-		if(!isset($_POST['userid'])||!isset($_POST['password'])){
+		if(!isset($_POST['username'])||!isset($_POST['password'])){
 			$this->display ();
 			exit();
 		}
-		$userid = $_POST['userid'];
+		$username = $_POST['username'];
 		$password = $_POST['password'];
 		
 		$user=M('User');
-		$where['userid'] = $userid;
+		$where['username'] = $username;
 		$where['password'] = md5($password);
-		$count=$user->where($where)->count();
-		if($count>0){
-			$refer = cookie('refer');   
+		
+		$userData=$user->where($where)->find();
+// 		dump($userData['user_id']);
+// 		exit();
+		if($userData!=NULL){
+			$refer = cookie('refer');
 			if($refer == null)
 			{
 				$refer=U("Index/index");
 			}
-			$_SESSION['userid']=$userid;
+			$_SESSION['user_id']=$userData['user_id'];
 			$this->success('登录成功',$refer);
 		}else{
 			$this->error('用户名错误或密码错误！');
