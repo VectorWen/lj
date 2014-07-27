@@ -1,0 +1,34 @@
+<div class="content" style="height: 500px">
+	<div class="classifynavigation">
+		<a href="__URL__" >所有讨论</a><br /><br />
+		<a href="__URL__/user" >我的讨论</a><br /><br />
+		<a href="__URL__/add" >添加讨论</a><br /> 
+	</div>
+	<div class="classifycontent">
+		头像：<img height="100" src="__PUBLIC__/Images/Head/defaule_header.jpg"/><br />
+		title：<{$fb.title}><br />
+		content：<{$fb.content}><br />
+		用户名：<{$fb.User.username}><br />
+		time：<{$fb.time|time2str}><br />
+		<if condition="$fb.user_id eq $user_id">
+			<a href="__URL__/delete?id=<{$fb.feedback_id}>">删除</a>
+		</if>
+		<hr />
+		<volist name="fbComment" id="v">
+			头像：<img height="50" src="__PUBLIC__/Images/Head/defaule_header.jpg"/><br />
+			用户名：<{$v.User.username}><br />
+			真名：<{$v.User.true_name}><br />
+			content：<{$v.content}><br />
+			time：<{$v.time|time2str}><br />
+			<if condition="$v.user_id eq $user_id">
+				<a href="__URL__/delComment?id=<{$v.comment_id}>">删除</a>
+			</if>
+			<hr />
+		</volist>
+		<form action="__URL__/addComment" method="post">
+			<input type="hidden" name="id" value="<{$fb.feedback_id}>"/>
+			评论：<input type="text" name="content"/>
+			<input type="submit" />
+		</form>
+	</div>
+</div>
