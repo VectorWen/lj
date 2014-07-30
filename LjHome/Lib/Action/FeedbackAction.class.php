@@ -79,8 +79,7 @@ class FeedbackAction extends CommonAction {
 	 * 添加反馈
 	 */
 	public function add() {
-		dump($_SERVER);
-		exit();
+		
 		if (! isset ( $_POST ['title'] ) || ! isset ( $_POST ['content'] ) || $_POST ['title'] == "" || $_POST ['content'] == "") {
 			$this->display ();
 			exit ();

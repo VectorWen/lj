@@ -12,7 +12,7 @@ File Encoding         : 65001
 
 Date: 2014-06-09 10:40:45
 */
--- 上线后不能用这个来更新数据库'
+-- 上线后不能用这个来更新数据库
 
 SET FOREIGN_KEY_CHECKS=0;
 
@@ -67,6 +67,8 @@ CREATE TABLE `lj_user` (
   `middle_picture` varchar(255) DEFAULT NULL,
   `small_picture` varchar(255) DEFAULT NULL,
   `level` tinyint(4) DEFAULT '0' COMMENT '0.在校1.非在校',
+  `countrymen_coin` int(11) DEFAULT '0' COMMENT '同乡币',
+  `intro` varchar(255) DEFAULT NULL COMMENT '个性签名',
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -74,11 +76,71 @@ CREATE TABLE `lj_user` (
 -- Records of lj_user
 -- ----------------------------
 INSERT INTO `lj_user` VALUES (1,'11070512', '25f9e794323b453885f5181f1b624d0b','黄廉温', 0, '会计', 
-'18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0);
+'18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
 INSERT INTO `lj_user` VALUES (2,'123456', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
- '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0);
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ INSERT INTO `lj_user` VALUES (3,'1', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ INSERT INTO `lj_user` VALUES (4,'2', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ INSERT INTO `lj_user` VALUES (5,'3', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ INSERT INTO `lj_user` VALUES (6,'4', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+  INSERT INTO `lj_user` VALUES (7,'5', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+  INSERT INTO `lj_user` VALUES (8,'6', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+
+ 
+DROP TABLE IF EXISTS `lj_bubbling`; 
+CREATE TABLE `lj_bubbling` (
+  `bubbling_id` int(11) NOT NULL AUTO_INCREMENT COMMENT'自增ID',
+  `user_id` int(11) NOT NULL COMMENT '发送该信息的用户id,取值为lj_user的user_id',
+  `content` text COMMENT'内容',
+  `at` text COMMENT '@ 的用户，用@user_id1@user_id2 方式保存',
+  `time` int(11) DEFAULT 0 COMMENT '发送的时间',
+  PRIMARY KEY (`bubbling_id`),
+  KEY `FK_user` (`user_id`),
+  CONSTRAINT `FK_user` FOREIGN KEY (`user_id`) REFERENCES `lj_user` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '冒泡信息表';
 
 
+DROP TABLE IF EXISTS `lj_bubbling_comment`;
+CREATE TABLE `lj_bubbling_comment` (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `user_id` int(11) NOT NULL COMMENT '发送该评论的用户id,取值为lj_user的user_id',
+  `bubbling_id` int(11) NOT NULL COMMENT '该评论是对哪条冒泡，取值为lj_bubbling 的bubbling_id',
+  `content` text COMMENT'内容',
+  `at` text COMMENT '@ 的用户，用@user_id1@user_id2 方式保存',
+  `time` int(11) DEFAULT '0' COMMENT '时间',
+  `type` tinyint(4) DEFAULT '0' COMMENT '0.评论 1.赞',
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '冒泡评论赞表';
+
+
+DROP TABLE IF EXISTS `lj_dynamic`;
+CREATE TABLE `lj_dynamic` (
+  `dynamic_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `user_id` int(11) NOT NULL COMMENT '标明是谁的动态',
+  `content` text  COMMENT '对该动态的描述 -- 以html 的形式保存',
+  `time` int(11) DEFAULT 0 COMMENT '时间',
+   PRIMARY KEY (`dynamic_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '动态表';
+
+
+DROP TABLE IF EXISTS `lj_at`;
+CREATE TABLE `lj_at` (
+  `at_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `user_id` int(11) NOT NULL COMMENT '标明是谁的',
+  `content` text  COMMENT '描述 -- 以html 的形式保存',
+  `time` int(11) DEFAULT 0 COMMENT '时间',
+   PRIMARY KEY (`at_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT 'at表';
+
+
+ 
+ 
 -- ----------------------
 -- 以下是之前的建表和数据，为了兼容测试，在还没有用到的都会留在下面，新建的表、更新的表会在这之上
 -- ----------------------
