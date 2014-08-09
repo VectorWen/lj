@@ -26,7 +26,7 @@ class LoginAction extends Action {
 			{
 				$refer=U("Index/index");
 			}
-			$_SESSION['user_id']=$userData['user_id'];
+			$_SESSION['userid']=$userData['userid'];
 			$this->success('登录成功',$refer);
 		}else{
 			$this->error('用户名错误或密码错误！');

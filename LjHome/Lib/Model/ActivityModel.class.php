@@ -1,14 +1,18 @@
 <?php
 class ActivityModel extends RelationModel {
 	protected $_link = array (
-			'Admin' => array (
+			'Activity_comment' => array (
+					'mapping_type' => HAS_MANY,
+					'class_name' => 'Activity_comment',
+					'foreign_key' => 'comment_id',
+					'mapping_name' => 'Activity_comment',
+			),
+			'User' => array (
 					'mapping_type' => BELONGS_TO,
-					'class_name' => 'Admin',
-					'foreign_key' => 'adminid',
-					'mapping_name' => 'admin',
-					'mapping_fields' => 'adminname',
-					'as_fields' => 'adminname' 
-			) 
+					'class_name' => 'User',
+					'foreign_key' => 'userid',
+					'mapping_name' => 'User',
+			),
 	);
 }
 ?>

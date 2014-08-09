@@ -1,0 +1,166 @@
+@CHARSET "UTF-8";
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+#top{
+	background-color: #fff;
+	height: 150px;
+}
+
+
+.logo{
+	margin-left: -10px;
+	margin-top: 30px;
+	height: 90px;
+	width:33%;
+	float: left;
+}
+
+#top .right{
+	width: 160px;
+}
+
+#top .right .login{
+	margin-top: 80px;
+	margin-right: 20px;
+	float: right;
+}
+#top .right .logined{
+	margin-top: 60px;
+	margin-right: 10px;
+	height: 55px;
+	float: left;
+}
+
+#top .right .name{
+	margin-top: 85px;
+	margin-right: 40px;
+	float: left;
+}
+
+
+.right{
+	float: right;
+}
+
+.left{
+	float:left;
+}
+
+#nav{
+	background-color: #428bca;
+}
+
+
+#nav a{
+	color: #f9f9f9;
+	font-size: 20px;
+}
+
+#navacition,#nav a:hover{
+	background-color: #1569b1;
+	color: #f9f9f9;
+}
+
+#nav .active:hover{
+	background-color: #1569b1;
+	color: #f9f9f9;
+}
+
+#content{
+	margin-top: 1px;
+}
+
+.content-1{
+	background-image: url("../Images/ic_content_bg.jpg");
+	height: 480px;
+}
+.content-3{
+	height: 1000px;
+}
+
+#content .content-1 .jumbotron{
+	background-color: transparent;
+	width: 50%;
+	float: left;
+}
+#content .content-1 img{
+	right:10px;
+	top:10px;
+	margin-top:20px;
+	width: 50%;
+	float: right;
+}
+
+.content-2{
+	background-color:#f9f9f9;
+}
+
+#content .content-2 .jumbotron{
+	background-color: transparent;
+}
+
+#content .content-2 .row{
+	margin-left: 20px;
+}
+
+#content .conleft{
+	width: 23%;
+	margin-top:20px;
+	border-right: 1px solid #ddd;
+	background-color:#fff;
+	height: 500px;
+}
+#content .conright{
+	padding: 50px 60px;
+	width: 77%;
+	
+}
+
+#content .conright .fdlist{
+	width: 100%;
+	
+}
+
+#content .conright .fdlist .list-v{
+	width: 100%;
+	
+}
+
+#content .conright .list-v .down{
+	margin-top:16px; 	
+}
+#content .conright  img{
+	width: 60px;
+	
+}
+
+#content ul a{
+	color:#333;
+}
+
+#content ul a:hover{
+	background-color: #eee;
+}
+
+#content ul .active a{
+	background-color: #ddd;
+}
+
+
+#content .title{
+	margin-top: 13px;
+}
+#content .conright .commentlist{
+	margin-left:36px; 	
+}
+
+#feedbackContent{
+	margin: 15px 0 15px 0;
+}
+
+
+

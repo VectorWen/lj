@@ -1,0 +1,31 @@
+<div class="content" style="height: 500px">
+	<div class="classifynavigation">
+		<include file="activity_classifynavigation" />
+	</div>
+	<div class="classifycontent">
+		头像：<img height="100" src="__PUBLIC__/Images/Head/defaule_header.jpg"/><br />
+		content：<{$acty.content}><br />
+		用户名：<{$acty.User.username}><br />
+		time：<{$acty.put_time|time2str}><br />
+		<if condition="$acty.userid eq $userid">
+			<a href="__URL__/delete?id=<{$acty.feedback_id}>">删除</a>
+		</if>
+		<hr />
+		<volist name="actyComment" id="v">
+			头像：<img height="50" src="__PUBLIC__/Images/Head/defaule_header.jpg"/><br />
+			用户名：<{$v.User.username}><br />
+			真名：<{$v.User.true_name}><br />
+			content：<{$v.content}><br />
+			time：<{$v.time|time2str}><br />
+			<if condition="$v.userid eq $userid">
+				<a href="__URL__/delComment?id=<{$v.comment_id}>">删除</a>
+			</if>
+			<hr />
+		</volist>
+		<form action="__URL__/addComment" method="post">
+			<input type="hidden" name="id" value="<{$acty.feedback_id}>"/>
+			评论：<input type="text" name="content"/>
+			<input type="submit" />
+		</form>
+	</div>
+</div>

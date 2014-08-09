@@ -4,7 +4,7 @@
 	 * @author vector
 	 *
 	 */
-class FeedbackAction extends CommonAction {
+class FeedbackAction extends NeedLoginAction {
 	/**
 	 * 反馈的显示 all,一页12 条
 	 */
@@ -12,12 +12,12 @@ class FeedbackAction extends CommonAction {
 		$m = D ( 'Feedback' );
 		$count = $m->count ();
 		import ( 'ORG.Util.Page' );
-		$Page = new Page ( $count, 2 );
+		$Page = new Page ( $count, 12 );
 		$show = $Page->show ();
 		$arr = $m->relation ( true )->limit ( $Page->firstRow . ',' . $Page->listRows )->select ();
 		$this->assign ( "fbList", $arr );
 		$this->assign ( "show", $show );
-		// dump($arr);
+	// dump($arr);
 		$this->display ();
 	}
 	/**
@@ -25,11 +25,11 @@ class FeedbackAction extends CommonAction {
 	 */
 	public function user() {
 		$m = D ( 'Feedback' );
-		$count = $m->where ( 'user_id = ' . $_SESSION ['user_id'] )->count ();
+		$count = $m->where ( 'userid = ' . $_SESSION ['userid'] )->count ();
 		import ( 'ORG.Util.Page' );
-		$Page = new Page ( $count, 2 );
+		$Page = new Page ( $count, 12 );
 		$show = $Page->show ();
-		$arr = $m->relation ( true )->limit ( $Page->firstRow . ',' . $Page->listRows )->where ( 'user_id=' . $_SESSION ['user_id'] )->select ();
+		$arr = $m->relation ( true )->limit ( $Page->firstRow . ',' . $Page->listRows )->where ( 'userid=' . $_SESSION ['userid'] )->select ();
 		$this->assign ( "fbList", $arr );
 		$this->assign ( "show", $show );
 		
@@ -48,15 +48,16 @@ class FeedbackAction extends CommonAction {
 		
 		$user = M ( 'user' );
 		foreach ( $fb ['Feedback_comment'] as $key => $value ) {
-			$user_id = $value ['user_id'];
-			$where ['user_id'] = $user_id;
+			$userid = $value ['userid'];
+			$where ['userid'] = $userid;
 			$commentUser = $user->where ( $where )->find ();
 			$fb ['Feedback_comment'] [$key] ['User'] = $commentUser;
 		}
 		
-		// dump($fb);
+		//dump($fb);
 		$this->assign ( "fbComment", $fb ['Feedback_comment'] );
-		$this->assign ( "user_id", $_SESSION['user_id'] );
+		$this->assign ( "userid", $_SESSION['userid'] );
+		$this->assign ( "type", $_GET['type'] );
 		$this->display ();
 	}
 	/**
@@ -66,7 +67,7 @@ class FeedbackAction extends CommonAction {
 		$id = $_GET ['id'];
 		$fb = D ( 'Feedback' );
 		$where ['feedback_id'] = $id;
-		$where ['user_id'] = $_SESSION ['user_id'];
+		$where ['userid'] = $_SESSION ['userid'];
 		$ok = $fb->relation ( true )->where ( $where )->delete ();
 		echo $ok;
 		if (ok > - 1) {
@@ -91,7 +92,7 @@ class FeedbackAction extends CommonAction {
 		
 		$data ['title'] = $title;
 		$data ['content'] = $content;
-		$data ['user_id'] = $_SESSION ['user_id'];
+		$data ['userid'] = $_SESSION ['userid'];
 		$data ['time'] = time ();
 		$data ['at'] = $at;
 		
@@ -113,7 +114,7 @@ class FeedbackAction extends CommonAction {
 			exit();
 		}
 		
-		$data['user_id'] = $_SESSION['user_id'];
+		$data['userid'] = $_SESSION['userid'];
 		$data['feedback_id'] = $_POST['id'];
 		$data['at'] = $_POST['at'];
 		$data['content'] = $_POST['content'];
@@ -138,7 +139,7 @@ class FeedbackAction extends CommonAction {
 		$id = $_GET ['id'];
 		$fbc = M ( 'Feedback_comment' );
 		$where ['comment_id'] = $id;
-		$where ['user_id'] = $_SESSION ['user_id'];
+		$where ['userid'] = $_SESSION ['userid'];
 		$ok = $fbc->where ( $where )->delete ();
 		echo $ok;
 		if (ok > - 1) {

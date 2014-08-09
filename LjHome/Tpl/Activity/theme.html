@@ -1,0 +1,19 @@
+<div class="content" style="margin-top: 10px; height: 600px">
+	<div class="classifynavigation">
+		<include file="activity_classifynavigation" />
+	</div>
+	<div class="classifycontent">
+		所有讨论
+		<hr />
+		<volist name="actyList" id="v">
+			头像：<img height="100" src="__PUBLIC__/Images/Head/defaule_header.jpg"/><br />
+			用户名：<{$v.User.username}><br />
+			真名：<{$v.User.true_name}><br />
+			<a href="__URL__/showOne?id=<{$v.acty_id}>">content：<{$v.content}></a><br />
+			time：<{$v.put_time|time2str}><br />
+			评论数：<{$v.Feedback_comment|count}>
+			<hr />
+		</volist>
+		<{$show}>
+	</div>
+</div>

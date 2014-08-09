@@ -19,30 +19,24 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `lj_feedback`; 
 CREATE TABLE `lj_feedback` (
   `feedback_id` int(11) NOT NULL AUTO_INCREMENT COMMENT'自增ID',
-  `user_id` int(11) NOT NULL COMMENT '发送该反馈信息的用户id,取值为lj_user的user_id',
+  `userid` int(11) NOT NULL COMMENT '发送该反馈信息的用户id,取值为lj_user的userid',
   `title` varchar(64) NOT NULL COMMENT'反馈的标题',
   `content` text COMMENT'反馈的描述内容',
-  `at` text COMMENT '@ 的用户，用@user_id1@user_id2 方式保存',
+  `at` text COMMENT '@ 的用户，用@userid1@userid2 方式保存',
   `time` int(11) DEFAULT 0 COMMENT '发送该反馈的时间',
-  PRIMARY KEY (`feedback_id`),
-  KEY `FK_user` (`user_id`),
-  CONSTRAINT `FK_user` FOREIGN KEY (`user_id`) REFERENCES `lj_user` (`user_id`)
+  PRIMARY KEY (`feedback_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '反馈信息表';
 
 
 DROP TABLE IF EXISTS `lj_feedback_comment`;
 CREATE TABLE `lj_feedback_comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-  `user_id` int(11) NOT NULL COMMENT '发送该反馈评论的用户id,取值为lj_user的user_id',
+  `userid` int(11) NOT NULL COMMENT '发送该反馈评论的用户id,取值为lj_user的userid',
   `feedback_id` int(11) NOT NULL COMMENT '该评论是对哪条反馈，取值为lj_feedback 的feedback_id',
-  `at` text COMMENT '@ 的用户，用@user_id1@user_id2 方式保存',
+  `at` text COMMENT '@ 的用户，用@userid1@userid2 方式保存',
   `content` text COMMENT '反馈的描述内容',
   `time` int(11) DEFAULT 0 COMMENT '发送该反馈的时间',
-  PRIMARY KEY (`comment_id`),
-   KEY `FK_user` (`user_id`),
-   KEY `FK_feedback` (`feedback_id`),
-  CONSTRAINT `FK_user` FOREIGN KEY (`user_id`) REFERENCES `lj_user` (`user_id`),
-  CONSTRAINT `FK_feedback` FOREIGN KEY (`feedback_id`) REFERENCES `lj_feedback` (`feedback_id`)
+  PRIMARY KEY (`comment_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '反馈评论表';
 
 
@@ -51,68 +45,73 @@ CREATE TABLE `lj_feedback_comment` (
 -- ----------------------------
 DROP TABLE IF EXISTS `lj_user`;
 CREATE TABLE `lj_user` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `userid` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
   `username` varchar(45) NOT NULL COMMENT '用来登录的用户名',
   `password` varchar(45) DEFAULT '25f9e794323b453885f5181f1b624d0b' COMMENT '登录密码，默认123456789',
   -- `profile_id` int(11) NOT NULL COMMENT '用户的详细信息', -- 优化再改
   `true_name` varchar(32) DEFAULT NULL COMMENT '真名',
   `sex` tinyint(4) DEFAULT NULL COMMENT '0:男 1:女',
   `specialty` varchar(45) DEFAULT NULL,
-  `school_address` varchar(255) DEFAULT NULL COMMENT '校地址',
-  `home_address` varchar(255) DEFAULT NULL COMMENT '家地址',
+  `schooladdress` varchar(255) DEFAULT NULL COMMENT '校地址',
+  `homeaddress` varchar(255) DEFAULT NULL COMMENT '家地址',
   `phone` varchar(225) DEFAULT NULL,
-  `short_phone` varchar(11) DEFAULT NULL,
-  `entry_year` varchar(11) DEFAULT NULL,
+  `shortphone` varchar(11) DEFAULT NULL,
+  `entryyear` varchar(11) DEFAULT NULL,
   `big_picture` varchar(255) DEFAULT NULL,
-  `middle_picture` varchar(255) DEFAULT NULL,
-  `small_picture` varchar(255) DEFAULT NULL,
+  `middlepicture` varchar(255) DEFAULT NULL,
+  `smallpicture` varchar(255) DEFAULT NULL,
   `level` tinyint(4) DEFAULT '0' COMMENT '0.在校1.非在校',
   `countrymen_coin` int(11) DEFAULT '0' COMMENT '同乡币',
   `intro` varchar(255) DEFAULT NULL COMMENT '个性签名',
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`userid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 
 -- ----------------------------
 -- Records of lj_user
+-- Records of lj_user
+-- Records of lj_user
+-- Records of lj_user
 -- ----------------------------
 INSERT INTO `lj_user` VALUES (1,'11070512', '25f9e794323b453885f5181f1b624d0b','黄廉温', 0, '会计', 
-'18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+'18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 1,100,"");
 INSERT INTO `lj_user` VALUES (2,'123456', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
- '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 1,100,"");
  INSERT INTO `lj_user` VALUES (3,'1', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
- '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 1,100,"");
  INSERT INTO `lj_user` VALUES (4,'2', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
- '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 1,100,"");
  INSERT INTO `lj_user` VALUES (5,'3', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
- '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 1,100,"");
  INSERT INTO `lj_user` VALUES (6,'4', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
- '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 1,100,"");
   INSERT INTO `lj_user` VALUES (7,'5', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
- '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 1,100,"");
   INSERT INTO `lj_user` VALUES (8,'6', 'e10adc3949ba59abbe56e057f20f883e','admin', 0,
- '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 0,0,"");
+ '会计', '18-142', '石岭', '13849291021', '894312', '2010', null, null, null, 1,100,"");
 
  
 DROP TABLE IF EXISTS `lj_bubbling`; 
 CREATE TABLE `lj_bubbling` (
   `bubbling_id` int(11) NOT NULL AUTO_INCREMENT COMMENT'自增ID',
-  `user_id` int(11) NOT NULL COMMENT '发送该信息的用户id,取值为lj_user的user_id',
+  `userid` int(11) NOT NULL COMMENT '发送该信息的用户id,取值为lj_user的userid',
   `content` text COMMENT'内容',
-  `at` text COMMENT '@ 的用户，用@user_id1@user_id2 方式保存',
+  `at` text COMMENT '@ 的用户，用@userid1@userid2 方式保存',
   `time` int(11) DEFAULT 0 COMMENT '发送的时间',
   PRIMARY KEY (`bubbling_id`),
-  KEY `FK_user` (`user_id`),
-  CONSTRAINT `FK_user` FOREIGN KEY (`user_id`) REFERENCES `lj_user` (`user_id`)
+  KEY `FK_user` (`userid`),
+  CONSTRAINT `FK_user` FOREIGN KEY (`userid`) REFERENCES `lj_user` (`userid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '冒泡信息表';
 
 
 DROP TABLE IF EXISTS `lj_bubbling_comment`;
 CREATE TABLE `lj_bubbling_comment` (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-  `user_id` int(11) NOT NULL COMMENT '发送该评论的用户id,取值为lj_user的user_id',
+  `userid` int(11) NOT NULL COMMENT '发送该评论的用户id,取值为lj_user的userid',
   `bubbling_id` int(11) NOT NULL COMMENT '该评论是对哪条冒泡，取值为lj_bubbling 的bubbling_id',
   `content` text COMMENT'内容',
-  `at` text COMMENT '@ 的用户，用@user_id1@user_id2 方式保存',
+  `at` text COMMENT '@ 的用户，用@userid1@userid2 方式保存',
   `time` int(11) DEFAULT '0' COMMENT '时间',
   `type` tinyint(4) DEFAULT '0' COMMENT '0.评论 1.赞',
   PRIMARY KEY (`comment_id`)
@@ -122,7 +121,7 @@ CREATE TABLE `lj_bubbling_comment` (
 DROP TABLE IF EXISTS `lj_dynamic`;
 CREATE TABLE `lj_dynamic` (
   `dynamic_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-  `user_id` int(11) NOT NULL COMMENT '标明是谁的动态',
+  `userid` int(11) NOT NULL COMMENT '标明是谁的动态',
   `content` text  COMMENT '对该动态的描述 -- 以html 的形式保存',
   `time` int(11) DEFAULT 0 COMMENT '时间',
    PRIMARY KEY (`dynamic_id`)
@@ -132,7 +131,7 @@ CREATE TABLE `lj_dynamic` (
 DROP TABLE IF EXISTS `lj_at`;
 CREATE TABLE `lj_at` (
   `at_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
-  `user_id` int(11) NOT NULL COMMENT '标明是谁的',
+  `userid` int(11) NOT NULL COMMENT '标明是谁的',
   `content` text  COMMENT '描述 -- 以html 的形式保存',
   `time` int(11) DEFAULT 0 COMMENT '时间',
    PRIMARY KEY (`at_id`)
@@ -140,114 +139,72 @@ CREATE TABLE `lj_at` (
 
 
  
- 
+-- 活动相关的表 
+
+drop table if exists `lj_activity_class`;
+
+create table `lj_activity_class`(
+	`class_id` int(11) not null auto_increment comment 'id',
+	`name` nvarchar(255) not null comment '类型名字',
+	`per_level` tinyint(4) default 0 comment '只有权限不小于这个值才能提出',
+	`content` text default null comment '描述这种类型活动是怎么样的',
+	`put_money` int(11) default 0 comment '提出扣除的同乡币',
+	`join_money` int(11) default 0 comment '参加扣除的同乡币',
+	`sum_money` int(11) default 0 comment '总结后返回的同乡币',
+	`sign_money` int(11) default 0 comment '参加者签到返回的同乡币',
+	primary key (`class_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '活动类型表';
+
+
+insert into `lj_activity_class` values(10,'话题讨论',1,'提出一个一个话题，全部人都可以讨论，提出就是活动的开始，可以停止活动的讨论，话题参与评论人数超过10 人，可以返回同乡币，超过20人 再次返回同乡币',5,0,5,1);
+insert into `lj_activity_class` values(25,'说做就做的活动',1,'每一个同乡都可以提出种类活动，限制最低的活动，只要活动生命周期够一天就行',30,10,50,20);
+insert into `lj_activity_class` values(38,'同乡必过活动',10,'一些大型活动，必须是管理人以上级别提出',10000,100,50000,600);
+
+
+drop table if exists `lj_activity`;
+
+create table `lj_activity`(
+	`acty_id` int(11) not null auto_increment comment 'id',
+	`userid` int(11) not null,
+	`class_id` int(11) not null,
+	`content` text comment '活动介绍内容',
+	`at` text ,
+	`image` text,
+	`put_time` int(11) DEFAULT 0 COMMENT '提出时间',
+	`join_time` int(11) DEFAULT 0 COMMENT '报名截止时间',
+	`start_time` int(11) DEFAULT 0 COMMENT '开始时间',
+	`acty_addr` nvarchar(255) default null,
+	`state` tinyint(4) default 0,
+	primary key (`acty_id`)
+)ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '活动表';
+
+insert into `lj_activity` values (1,1,10,'同乡会的未来发展是以技术发展为中心，各种学习活动为行动，同乡情为连接点的无法战胜的同乡会',null,null,1407559378,0,0,null,0);
+
+DROP TABLE IF EXISTS `lj_activity_comment`;
+CREATE TABLE `lj_activity_comment` (
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `userid` int(11) NOT NULL COMMENT '发送该评论的用户id,取值为lj_user的userid',
+  `activity_id` int(11) NOT NULL,
+  `content` text COMMENT'内容',
+  `at` text COMMENT '@ 的用户，用@userid1@userid2 方式保存',
+  `time` int(11) DEFAULT '0' COMMENT '时间',
+  `type` tinyint(4) DEFAULT '0' COMMENT '0.评论 1.赞 2.反馈',
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '活动评论赞表';
+
+drop table if exists `lj_activity_join`;
+
+create table `lj_activity_join`(
+	`join_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+	`activity_id` int(11) NOT NULL,
+	`userid` int(11) NOT NULL COMMENT '发送该评论的用户id,取值为lj_user的userid',
+	 `time` int(11) DEFAULT '0' COMMENT '时间',
+	PRIMARY KEY (`join_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '活动报名表';
 -- ----------------------
 -- 以下是之前的建表和数据，为了兼容测试，在还没有用到的都会留在下面，新建的表、更新的表会在这之上
 -- ----------------------
 
-
-
--- ----------------------------
--- Table structure for `lj_activity`
--- ----------------------------
-DROP TABLE IF EXISTS `lj_activity`;
-CREATE TABLE `lj_activity` (
-  `activityid` int(11) NOT NULL AUTO_INCREMENT,
-  `adminid` varchar(255) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `begintime` int(11) DEFAULT NULL,
-  `endtime` int(11) DEFAULT NULL,
-  `content` text,
-  `address` varchar(255) DEFAULT NULL,
-  `cost` double DEFAULT NULL,
-  `priority` tinyint(4) DEFAULT '3',
-  `status` tinyint(4) DEFAULT '0' COMMENT '0.未报名1.已报名',
-  PRIMARY KEY (`activityid`),
-  KEY `FK_admin_activity` (`adminid`),
-  CONSTRAINT `FK_admin_activity` FOREIGN KEY (`adminid`) REFERENCES `lj_admin` (`adminid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of lj_activity
--- ----------------------------
-INSERT INTO `lj_activity` VALUES ('1', 'adminxc', '端午节包车回廉江', '1399996800', '1401465599', '请大家尽快报名，名额优先，先报先得', '五邑大学', '120', '3', '0');
-INSERT INTO `lj_activity` VALUES ('2', 'adminxc', '同乡送旧活动', '1399996800', '1400342399', '<h3>\r\n	<span style=\"background-color:#4C33E5;\">希望各位师兄师姐都回来聚聚，我们同聚一堂</span>\r\n</h3>', '银晶酒店', '35', '3', '0');
-INSERT INTO `lj_activity` VALUES ('3', 'adminxc', '圭峰山爬山', '1400515200', '1400601599', '<p>\r\n	&nbsp;&nbsp;&nbsp;&nbsp;我们到时9:20分集中，然后9.30分到旧车站搭车，到圭峰山大概10.30分，到时我们一起爬\r\n</p>\r\n<p>\r\n	&nbsp;我们需要兵分两路，一起爬到山顶就完成任务，同时最利害的将获得礼品一份\r\n</p>', '圭峰山', '0', '3', '0');
-INSERT INTO `lj_activity` VALUES ('4', null, '测试一下', '1399305600', '1399391999', '<div class=\"result c-container \" id=\"2\" style=\"font-size:13px;color:#333333;font-family:arial;background-color:#FFFFFF;\">\r\n	<h3 class=\"t\" style=\"font-weight:normal;font-size:medium;\">\r\n		<a href=\"http://www.baidu.com/link?url=tpZwS267iHpdSTgGRbJVj8zNo7C_hpPS36Mc7GW5xPZd9Y-Ah0deCTksSOqN37Ku\" target=\"_blank\"><span style=\"color:#CC0000;\">策划书</span>_<span style=\"color:#CC0000;\">策划书</span>范文模板</a>\r\n	</h3>\r\n	<div class=\"c-row c-gap-top-small\">\r\n		<div class=\"general_image_pic c-span6\">\r\n			<a class=\"c-img6\" href=\"http://www.baidu.com/link?url=tpZwS267iHpdSTgGRbJVj8zNo7C_hpPS36Mc7GW5xPZd9Y-Ah0deCTksSOqN37Ku\" target=\"_blank\"><img src=\"http://i8.baidu.com/it/u=2111664819,1349937204&amp;fm=96&amp;s=ED079557DEF207A1481515060300D066\" style=\"height:75px;\" /></a>\r\n		</div>\r\n		<div class=\"c-span18 c-span-last\">\r\n			<div class=\"c-abstract\">\r\n				策划书频道专业提供优秀的策划书范文,其内容包括有策划书格式、<span style=\"color:#CC0000;\">活动策划书</span>、策划书模板、项目策划书、企业策划书、营销策划书、运动会策划书、服装店策划书、节目...\r\n			</div>\r\n			<div class=\"f13\">\r\n				<span class=\"g\" style=\"color:#008000;\">yjbys.com/cehuashu/&nbsp;2014-05-16&nbsp;</span>\r\n				<div class=\"c-tools\" id=\"tools_5018445628674313400\">\r\n					<span class=\"c-icon c-icon-triangle-down-g\" style=\"vertical-align:text-bottom;\"></span>\r\n				</div>\r\n<span class=\"c-icons-outer\" style=\"vertical-align:bottom;\"><span class=\"c-icons-inner\"></span></span>&nbsp;-&nbsp;<a href=\"http://cache.baiducontent.com/c?m=9d78d513d9d431df4f9ae3697d12c0156d4381132ba7d00209a08438e37328365321a3e52878564291d27d141cb20204babb7765377471eac4d5d91d87fcc16975cf3a&amp;p=8d3ed25d928a12a05abd9b7d0a14c9&amp;newp=882a9642d4db00e909b6d62d0214cf231611c20e3bd7c8543985c80a&amp;user=baidu&amp;fm=sc&amp;query=%BB%EE%B6%AF%B2%DF%BB%AE&amp;qid=&amp;p1=2\" target=\"_blank\" class=\"m\">百度快照</a>\r\n			</div>\r\n		</div>\r\n	</div>\r\n</div>\r\n<div class=\"result c-container \" id=\"3\" style=\"font-size:13px;color:#333333;font-family:arial;background-color:#FFFFFF;\">\r\n	<h3 class=\"t\" style=\"font-weight:normal;font-size:medium;\">\r\n		<a href=\"http://www.baidu.com/link?url=Yp4EDZO80SGYUdJ4Fi2BuGa9SOyaAA0_gasCNuIUmLb4FvH-V9gYEWiZ4AHlJGLpq3UTUQjs9Qq-jyRgATPWhq\" target=\"_blank\">校园<span style=\"color:#CC0000;\">活动策划书</span></a>\r\n	</h3>\r\n	<div class=\"c-abstract\">\r\n		校园定向越野赛<span style=\"color:#CC0000;\">活动策划书</span>&nbsp;“感谢有你”朗诵大赛<span style=\"color:#CC0000;\">活动策划书</span>&nbsp;大学生义务支教<span style=\"color:#CC0000;\">活动策划</span>方案 电子竞技大赛策划书 “twinkle girls”女生节<span style=\"color:#CC0000;\">活动策划书</span>&nbsp;校园达人秀才艺大赛...\r\n	</div>\r\n	<div class=\"f13\">\r\n		<span class=\"g\" style=\"color:#008000;\">www.diyifanwen.com/fa...&nbsp;2014-05-03&nbsp;</span>\r\n		<div class=\"c-tools\" id=\"tools_3420226919416154862\">\r\n			<span class=\"c-icon c-icon-triangle-down-g\" style=\"vertical-align:text-bottom;\"></span>\r\n		</div>\r\n<span class=\"c-icons-outer\" style=\"vertical-align:bottom;\"><span class=\"c-icons-inner\"></span></span>&nbsp;-&nbsp;<a href=\"http://cache.baiducontent.com/c?m=9d78d513d9d431df4f9ae3697d12c0156d4381132ba7d00209a08438e37328365321a3e52878564291d27d141cb20c19afe7360561586beccf9bd40f8ae7852858d97a6b6d48d51d578445b2810d7f9771ca1bf4&amp;p=8a3edf16d9c107ff57ee93784a4392&amp;newp=8b2a971bc7d018e440bd9b7d0a10cb231611c20e3bd38e046c8dd850&amp;user=baidu&amp;fm=sc&amp;query=%BB%EE%B6%AF%B2%DF%BB%AE&amp;qid=&amp;p1=3\" target=\"_blank\" class=\"m\">百度快照</a>&nbsp;-&nbsp;<a href=\"http://www.baidu.com/tools?url=http%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DYp4EDZO80SGYUdJ4Fi2BuGa9SOyaAA0_gasCNuIUmLb4FvH-V9gYEWiZ4AHlJGLpq3UTUQjs9Qq-jyRgATPWhq&amp;jump=http%3A%2F%2Fkoubei.baidu.com%2Fwomc%2Fp%2Fsentry%3Ftitle%3D%01%E6%A0%A1%E5%9B%AD%02%E6%B4%BB%E5%8A%A8%01%E7%AD%96%E5%88%92%01%E4%B9%A6%03%26q%3D%BB%EE%B6%AF%B2%DF%BB%AE&amp;key=surl\" target=\"_blank\" class=\"m\">评价</a>\r\n	</div>\r\n	<div class=\"extquery\" style=\"padding:3px 0px 0px;\">\r\n		<a href=\"http://www.baidu.com/s?usm=3&amp;tn=site888_pg&amp;f=0&amp;wd=%E6%A0%A1%E5%9B%AD%E6%B4%BB%E5%8A%A8%E7%AD%96%E5%88%92%E4%B9%A6&amp;ie=utf-8&amp;rsv_crq=1\" target=\"_blank\">查看更多关于“<span style=\"color:#CC0000;\">校园活动策划书</span>”的内容 &gt;&gt;</a>\r\n	</div>\r\n</div>\r\n<div class=\"result c-container \" id=\"4\" style=\"font-size:13px;color:#333333;font-family:arial;background-color:#FFFFFF;\">\r\n	<h3 class=\"t\" style=\"font-weight:normal;font-size:medium;\">\r\n		<a href=\"http://www.baidu.com/link?url=7b7vxg55hV9WFYmq4LuzA1YTbhuddSpENS40V9MK9py\" target=\"_blank\"><span style=\"color:#CC0000;\">策划</span>吧 - 打造最全面的<span style=\"color:#CC0000;\">策划方案</span>参考网站</a>\r\n	</h3>\r\n	<div class=\"c-row c-gap-top-small\">\r\n		<div class=\"general_image_pic c-span6\">\r\n			<a class=\"c-img6\" href=\"http://www.baidu.com/link?url=7b7vxg55hV9WFYmq4LuzA1YTbhuddSpENS40V9MK9py\" target=\"_blank\"><img src=\"http://i9.baidu.com/it/u=2078197397,571890408&amp;fm=96&amp;s=0A647022F8FA43B514CCE8860100A0E0\" style=\"height:75px;\" /></a>\r\n		</div>\r\n		<div class=\"c-span18 c-span-last\">\r\n			<div class=\"c-abstract\">\r\n				免费提供商业策划书、创业计划书、广告策划书、<span style=\"color:#CC0000;\">活动策划书</span>、营销策划书、网站策划书、项目策划书、公关策划书、婚礼策划书、<span style=\"color:#CC0000;\">活动策划书</span>,让您在最短的时间内就可以...\r\n			</div>\r\n			<div class=\"f13\">\r\n				<span class=\"g\" style=\"color:#008000;\">www.alafy.com/&nbsp;2014-04-30&nbsp;</span>\r\n				<div class=\"c-tools\" id=\"tools_2853317794126792286\">\r\n					<span class=\"c-icon c-icon-triangle-down-g\" style=\"vertical-align:text-bottom;\"></span>\r\n				</div>\r\n<span class=\"c-icons-outer\" style=\"vertical-align:bottom;\"><span class=\"c-icons-inner\"></span></span>&nbsp;-&nbsp;<a href=\"http://cache.baiducontent.com/c?m=9d78d513d9d431df4f9ae3697d12c0156d4381132ba7d00209a08438e37328365321a3e52878564291d27d141cb20c19afe73605645d73e3d0df883d8ce6cd35&amp;p=9d3ecc1886cc41ae5dadc7710f6496&amp;newp=90759a45d7c605e61afbdc2d0214cc231610db2151d4d2103b9dd15edb&amp;user=baidu&amp;fm=sc&amp;query=%BB%EE%B6%AF%B2%DF%BB%AE&amp;qid=&amp;p1=4\" target=\"_blank\" class=\"m\">百度快照</a>\r\n			</div>\r\n		</div>\r\n	</div>\r\n</div>\r\n<div class=\"result c-container \" id=\"5\" style=\"font-size:13px;color:#333333;font-family:arial;background-color:#FFFFFF;\">\r\n	<h3 class=\"t\" style=\"font-weight:normal;font-size:medium;\">\r\n		<a href=\"http://www.baidu.com/link?url=tON0B9dRTnjLXl3MsztYR04X4wVuIGRz36AAHwJLPM_U7OZH2Q-8d2bbq2bN-EYY\" target=\"_blank\">北京<span style=\"color:#CC0000;\">活动策划</span>招聘求职信息_智联招聘</a>\r\n	</h3>\r\n	<div class=\"c-abstract\">\r\n		智联招聘为您提供所有行业所有类别的北京<span style=\"color:#CC0000;\">活动策划</span>招聘信息、北京<span style=\"color:#CC0000;\">活动策划</span>求职信息,想找最新最全的北京<span style=\"color:#CC0000;\">活动策划</span>招聘信息、求职信息就上智联招聘.\r\n	</div>\r\n	<div class=\"f13\">\r\n		<span class=\"g\" style=\"color:#008000;\">jobs.zhaopin.com/beij...&nbsp;2014-05-02&nbsp;</span>\r\n		<div class=\"c-tools\" id=\"tools_8886976139714523425\">\r\n			<span class=\"c-icon c-icon-triangle-down-g\" style=\"vertical-align:text-bottom;\"></span>\r\n		</div>\r\n<span class=\"c-icons-outer\" style=\"vertical-align:bottom;\"><span class=\"c-icons-inner\"><span class=\"c-vline\"></span><span class=\"certification vstar\"><a href=\"http://trust.baidu.com/vcard/index/show?id=v_6f95ab13c90aebca2e64b85829bd9d46\" class=\"c-icon c-icon-v c-icon-v1 c-icon-v3\" target=\"_blank\"></a></span></span></span>&nbsp;-&nbsp;<a href=\"http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763104e8a3658438014748d83483d8fcf5f93130a1c187bb3ec7c7a4b5886d83d3f04a94241feb56b32610c37c7ebdfff3dcacb963f5cfc3035000bf64105a56db8bb3632b257&amp;p=8378d65d85cc43ff57ed9574495f9d&amp;newp=882a9544dc8a1aee1fbe9b7c7f4dc1231610db2151d2d015368fd20f&amp;user=baidu&amp;fm=sc&amp;query=%BB%EE%B6%AF%B2%DF%BB%AE&amp;qid=&amp;p1=5\" target=\"_blank\" class=\"m\">百度快照</a>&nbsp;-&nbsp;<a href=\"http://www.baidu.com/tools?url=http%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DtON0B9dRTnjLXl3MsztYR04X4wVuIGRz36AAHwJLPM_U7OZH2Q-8d2bbq2bN-EYY&amp;jump=http%3A%2F%2Fkoubei.baidu.com%2Fwomc%2Fp%2Fsentry%3Ftitle%3D%01%E5%8C%97%E4%BA%AC%02%E6%B4%BB%E5%8A%A8%01%E7%AD%96%E5%88%92%03%E6%8B%9B%E8%81%98%01%E6%B1%82%E8%81%8C%01%E4%BF%A1%E6%81%AF%01_%01%E6%99%BA%E8%81%94%01%E6%8B%9B%E8%81%98%01%26q%3D%BB%EE%B6%AF%B2%DF%BB%AE&amp;key=surl\" target=\"_blank\" class=\"m\">评价</a>\r\n	</div>\r\n</div>', '五邑大学', '500', '3', '0');
-INSERT INTO `lj_activity` VALUES ('5', null, '端午节来了', '1401796055', null, '西瓜，饺子，粽子，应有尽有', '北区饭堂2楼', '0', '3', '0');
-INSERT INTO `lj_activity` VALUES ('6', null, '我我我我我哇', '1401796737', '1402487941', '哇哇哇', '哇哇哇', '50', '3', '0');
-
--- ----------------------------
--- Table structure for `lj_activityinfo`
--- ----------------------------
-DROP TABLE IF EXISTS `lj_activityinfo`;
-CREATE TABLE `lj_activityinfo` (
-  `activityinfoid` int(11) NOT NULL AUTO_INCREMENT,
-  `activityid` int(11) DEFAULT NULL,
-  `userid` varchar(45) DEFAULT NULL,
-  `joinnumber` int(11) DEFAULT NULL COMMENT '默认为1',
-  `status` tinyint(4) DEFAULT NULL COMMENT '0.不参与(默认)1.参与',
-  PRIMARY KEY (`activityinfoid`),
-  KEY `FK_activity_activityinfo` (`activityid`),
-  KEY `FK_user_activityinfo` (`userid`),
-  CONSTRAINT `FK_activity_activityinfo` FOREIGN KEY (`activityid`) REFERENCES `lj_activity` (`activityid`),
-  CONSTRAINT `FK_user_activityinfo` FOREIGN KEY (`userid`) REFERENCES `lj_user` (`userid`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of lj_activityinfo
--- ----------------------------
-INSERT INTO `lj_activityinfo` VALUES ('13', '3', 'AP1006451', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('14', '4', 'AP1006451', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('17', '3', 'AP1006453', '5', '1');
-INSERT INTO `lj_activityinfo` VALUES ('18', '1', 'AP1006419', '2', '1');
-INSERT INTO `lj_activityinfo` VALUES ('19', '1', 'ap1003212', '4', '1');
-INSERT INTO `lj_activityinfo` VALUES ('20', '1', 'AP1006429', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('21', '1', 'AP1006452', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('23', '1', 'AP1006459', '4', '1');
-INSERT INTO `lj_activityinfo` VALUES ('24', '1', 'AP1006458', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('25', '1', 'AP1006457', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('26', '1', 'AP1006456', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('27', '1', 'AP1006455', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('30', '1', 'AP1006454', '3', '1');
-INSERT INTO `lj_activityinfo` VALUES ('31', '3', 'AP1006454', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('33', '2', 'AP1006429', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('34', '4', 'AP1006429', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('35', '3', 'AP1006429', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('36', '3', 'AP1006452', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('37', '1', 'AP1006451', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('38', '1', 'AP1006453', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('39', '5', 'AP1006458', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('40', '6', 'ap1006459', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('44', '6', 'AP1006452', '5', '1');
-INSERT INTO `lj_activityinfo` VALUES ('45', '6', 'AP1006429', '3', '1');
-INSERT INTO `lj_activityinfo` VALUES ('46', '6', 'AP1006368', '1', '1');
-INSERT INTO `lj_activityinfo` VALUES ('47', '6', 'ap1006453', '1', '1');
-
--- ----------------------------
--- Table structure for `lj_activityreview`
--- ----------------------------
-DROP TABLE IF EXISTS `lj_activityreview`;
-CREATE TABLE `lj_activityreview` (
-  `activityreviewid` int(11) NOT NULL AUTO_INCREMENT,
-  `userid` varchar(45) DEFAULT NULL,
-  `activityid` int(11) DEFAULT NULL,
-  `content` text,
-  `picture1` varchar(255) DEFAULT NULL,
-  `picture2` varchar(255) DEFAULT NULL,
-  `picture3` varchar(255) DEFAULT NULL,
-  `addtime` int(11) DEFAULT NULL,
-  `status` tinyint(11) DEFAULT NULL COMMENT '0:正常',
-  PRIMARY KEY (`activityreviewid`),
-  KEY `FK_activity_activityreview` (`activityid`),
-  KEY `FK_user_activityreview` (`userid`),
-  CONSTRAINT `FK_activity_activityreview` FOREIGN KEY (`activityid`) REFERENCES `lj_activity` (`activityid`),
-  CONSTRAINT `FK_user_activityreview` FOREIGN KEY (`userid`) REFERENCES `lj_user` (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of lj_activityreview
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for `lj_admin`
@@ -322,11 +279,7 @@ CREATE TABLE `lj_articlereview` (
   `content` text,
   `addtime` int(11) DEFAULT NULL,
   `status` int(11) DEFAULT '0' COMMENT '0:正常',
-  PRIMARY KEY (`articlereviewid`),
-  KEY `FK_article_articlereview` (`articleid`),
-  KEY `FK_user_articlereview` (`userid`),
-  CONSTRAINT `FK_article_articlereview` FOREIGN KEY (`articleid`) REFERENCES `lj_article` (`articleid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_user_articlereview` FOREIGN KEY (`userid`) REFERENCES `lj_user` (`userid`)
+  PRIMARY KEY (`articlereviewid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -406,11 +359,7 @@ CREATE TABLE `lj_borrow` (
   `isbn` varchar(125) DEFAULT NULL,
   `status` tinyint(4) DEFAULT NULL COMMENT '0.未借出1.下架',
   `borrowerid` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`borrowid`),
-  KEY `FK_book_borrow` (`isbn`),
-  KEY `FK_user_borrow` (`offerid`),
-  CONSTRAINT `FK_book_borrow` FOREIGN KEY (`isbn`) REFERENCES `lj_book` (`isbn`),
-  CONSTRAINT `FK_user_borrow` FOREIGN KEY (`offerid`) REFERENCES `lj_user` (`userid`)
+  PRIMARY KEY (`borrowid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -511,9 +460,7 @@ CREATE TABLE `lj_source` (
   `addtime` int(11) DEFAULT NULL,
   `downloadcount` int(11) DEFAULT '0' COMMENT '资源下载次数',
   `status` tinyint(4) DEFAULT '0' COMMENT '0:正常 1:删除',
-  PRIMARY KEY (`sourceid`),
-  KEY `FK_user_source` (`userid`),
-  CONSTRAINT `FK_user_source` FOREIGN KEY (`userid`) REFERENCES `lj_user` (`userid`)
+  PRIMARY KEY (`sourceid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 -- ----------------------------

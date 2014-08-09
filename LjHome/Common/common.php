@@ -25,3 +25,5 @@ function time2str($time){
 		return (int)$year."年前";
 
 }
+
+
