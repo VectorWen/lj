@@ -14,8 +14,7 @@
 
 <link rel="stylesheet" href="__CSS__/css_style.css">
 </head>
-<body>
-
+<body class="index">
 	<div id="top">
 		<div class="container">
 			<img alt="logo" class="img-rounded img-responsive logo "
@@ -42,7 +41,7 @@
 				<li role="presentation" id="navacition"><a href="__ROOT__/">首页</span></a></li>
 				<li role="presentation"><a href="#">新闻中心</a></li>
 				<li role="presentation"><a href="#">教程借阅</a></li>
-				<li role="presentation"><a href="#">同乡活动</a></li>
+				<li role="presentation"><a href="__APP__/Activity" target="_blank">同乡活动</a></li>
 				<li role="presentation"><a href="#">资源共享</a></li>
 				<li role="presentation"><a href="#">用户中心</a></li>
 				<li role="presentation"><a href="__APP__/Feedback">问题反馈</a></li>

@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" href="__CSS__/css_style.css">
 </head>
-<body>
+<body class="index">
 
 	<div id="top">
 		<div class="container">
@@ -76,7 +76,7 @@
 
 
 					<script id="feedbackContent" name="content" type="text/plain"
-						style="height:300px;">
+						style="height:300px;width:100%">
    				 	</script>
 					<!-- 配置文件 -->
 					<script type="text/javascript" src="__JS__/ueditor.config.js"></script>

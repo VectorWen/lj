@@ -174,7 +174,7 @@ create table `lj_activity`(
 	`join_time` int(11) DEFAULT 0 COMMENT '报名截止时间',
 	`start_time` int(11) DEFAULT 0 COMMENT '开始时间',
 	`acty_addr` nvarchar(255) default null,
-	`state` tinyint(4) default 0,
+	`status` tinyint(4) default 0 COMMENT '0:草稿状态，1：发布了，报名状态，2：停止报名，3：开始了，4，结束了，5：总结了',
 	primary key (`acty_id`)
 )ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT '活动表';
 

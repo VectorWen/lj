@@ -17,7 +17,7 @@ class FeedbackAction extends NeedLoginAction {
 		$arr = $m->relation ( true )->limit ( $Page->firstRow . ',' . $Page->listRows )->select ();
 		$this->assign ( "fbList", $arr );
 		$this->assign ( "show", $show );
-	// dump($arr);
+	//  dump($arr);
 		$this->display ();
 	}
 	/**
@@ -44,6 +44,8 @@ class FeedbackAction extends NeedLoginAction {
 		$m = D ( 'Feedback' );
 		$where ['feedback_id'] = $id;
 		$fb = $m->relation ( true )->where ( $where )->find ();
+		$fb['content'] = stripslashes($fb['content']);
+		dump($fb);
 		$this->assign ( "fb", $fb );
 		
 		$user = M ( 'user' );

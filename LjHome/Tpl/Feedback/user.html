@@ -14,7 +14,7 @@
 
 <link rel="stylesheet" href="__CSS__/css_style.css">
 </head>
-<body>
+<body class="index">
 
 	<div id="top">
 		<div class="container">
