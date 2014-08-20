@@ -6,7 +6,7 @@ if(!$conn){
  die("连接失败".mysql_error()); // 如果是sql 语句错误，那么就会提醒的
 }else{
  echo "连接成功";
-}
+}//sdfs fsdfsdf
 //选择数据库
 mysql_select_db("huanglw");
 //设置编码
